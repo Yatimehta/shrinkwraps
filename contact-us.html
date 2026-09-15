@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - shrinkwraps.co.uk</title>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/styles.min.css?v=3.0">
+  <link rel="stylesheet" href="css/components.min.css?v=3.0">
+  <link rel="stylesheet" href="css/shop.min.css?v=3.0">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-left">
+        <span><i class="fas fa-truck"></i> Free UK Mainland Delivery on Orders Over £50</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="index.html">Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="main-header">
+    <div class="container header-wrapper">
+      <a href="index.html" class="logo">
+        shrinkwraps<span>.co.uk</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <div class="breadcrumbs"><a href="index.html">Home</a> / <span>Contact</span></div>
+    </div>
+  </div>
+
+  <section style="padding-bottom: 5rem;">
+    <div class="container">
+      <div class="checkout-grid">
+        
+        <!-- Contact Form -->
+        <div style="background: #ffffff; padding: 2.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <h2 style="margin-bottom: 1.5rem;">Send Us a Message</h2>
+          <div id="contactSuccessMsg" style="display: none; background: #ecfdf5; border: 1px solid #10b981; color: #065f46; padding: 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
+            <h4 style="margin-bottom: 0.25rem;"><i class="fas fa-check-circle"></i> Message Sent Successfully!</h4>
+            <p style="margin: 0; font-size: 0.9rem;">Thank you for contacting shrinkwraps.co.uk. Our packaging specialists will review your inquiry and respond within 2 hours during business hours.</p>
+          </div>
+          <form id="contactForm" onsubmit="event.preventDefault(); document.getElementById('contactSuccessMsg').style.display='block'; this.reset(); window.scrollTo({top: document.getElementById('contactSuccessMsg').offsetTop - 100, behavior: 'smooth'});">
+            <div class="form-row-2col">
+              <div class="form-group">
+                <label>Your Name *</label>
+                <input type="text" class="form-control" required placeholder="John Doe">
+              </div>
+              <div class="form-group">
+                <label>Email Address *</label>
+                <input type="email" class="form-control" required placeholder="john@company.co.uk">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" class="form-control" placeholder="Bulk Quotation / Order Inquiry">
+            </div>
+            <div class="form-group">
+              <label>Message *</label>
+              <textarea class="form-control" rows="5" required placeholder="How can we help your business?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="padding: 12px 28px; font-weight: 700;">SEND MESSAGE</button>
+          </form>
+        </div>
+
+        <!-- Locations & Info -->
+        <div>
+          <div style="background: #ffffff; padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 2rem;">
+            <h3 class="widget-title">Headquarters</h3>
+            <p style="margin-bottom: 1rem; font-size: 0.95rem; color: var(--text-body);">
+              <strong>RAJDHANI UK LIMITED</strong><br>
+              shrinkwraps.co.uk Distribution Network<br>
+              United Kingdom
+            </p>
+            <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone-alt" style="color: var(--primary-color);"></i> <strong>Phone:</strong> +44 020 8123 4567</p>
+            <p style="margin-bottom: 0.5rem;"><i class="fas fa-envelope" style="color: var(--primary-color);"></i> <strong>Email:</strong> sales@shrinkwraps.co.uk</p>
+            <p><i class="fas fa-clock" style="color: var(--primary-color);"></i> <strong>Hours:</strong> Mon - Fri: 8:00 AM - 6:00 PM</p>
+          </div>
+
+          <div style="background: #ffffff; padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h3 class="widget-title">Regional Hubs</h3>
+            <ul style="font-size: 0.9rem; line-height: 1.8; color: var(--text-body);">
+              <li>📍 <strong>London Hub:</strong> 14 Industrial Way, London</li>
+              <li>📍 <strong>Birmingham Hub:</strong> 8 Central Park, Birmingham</li>
+              <li>📍 <strong>Manchester Hub:</strong> 22 Distribution Rd, Manchester</li>
+              <li>📍 <strong>Leicester Hub:</strong> 5 Express Business Park, Leicester</li>
+              <li>📍 <strong>Glasgow Hub:</strong> 19 Freight Terminus, Glasgow</li>
+              <li>📍 <strong>Leeds Hub:</strong> 3 Logistics Way, Leeds</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- ============ FOOTER ============ -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Office -->
+        <div class="footer-col-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="images/sw-logo.webp" alt="shrinkwraps.co.uk" style="max-width: 210px; display: block; margin-bottom: 16px;">
+          </a>
+          <p style="font-size: 13px; color: #94a3b8; line-height: 1.6; margin-bottom: 8px;">
+            <strong>Registered office address:</strong><br>
+            RAJDHANI UK LIMITED<br>
+            128 City Road, London, United Kingdom, EC1V 2NX
+          </p>
+          <div class="footer-social" style="margin-top: 14px;">
+            <a href="http://fb.com/shrinkwrapsuk" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/shrinkwrapsuk" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@shrinkwraps.co.uk" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: OUR STORES -->
+        <div>
+          <h4 class="footer-title">OUR STORES</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">London</a></li>
+            <li><a href="shop.html">Birmingham</a></li>
+            <li><a href="shop.html">Manchester</a></li>
+            <li><a href="shop.html">Leicester</a></li>
+            <li><a href="shop.html">Glasgow</a></li>
+            <li><a href="shop.html">Leeds</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: USEFUL LINKS -->
+        <div>
+          <h4 class="footer-title">USEFUL LINKS</h4>
+          <ul class="footer-links">
+            <li><a href="terms.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Returns</a></li>
+            <li><a href="about-us.html">Careers</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="blog.html">Latest News</a></li>
+            <li><a href="shop.html">Our Sitemap</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: CATEGORIES -->
+        <div>
+          <h4 class="footer-title">CATEGORIES</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=stretch-film">Stretch Film</a></li>
+            <li><a href="shop.html?category=mailing-bags">Mailing Bags</a></li>
+            <li><a href="shop.html?category=tapes">Tapes</a></li>
+            <li><a href="shop.html?category=polythene">Polythene</a></li>
+            <li><a href="shop.html?category=refuse-sacks-2">Refuse Sacks</a></li>
+            <li><a href="shop.html?category=royal-mail-pip-boxes">Pip Boxes</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: CUSTOMER SERVICE -->
+        <div>
+          <h4 class="footer-title">CUSTOMER SERVICE</h4>
+          <ul class="footer-links">
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="terms.html">Delivery Information</a></li>
+            <li><a href="terms.html">Shipping</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="terms.html">Returns</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bottom-footer" style="padding: 20px 0; border-top: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
+        <p style="font-size: 12px; color: #64748b; margin: 0;">&copy; 2026 shrinkwraps.co.uk - Operated by RAJDHANI UK LIMITED. All Rights Reserved. <!-- VAT NUMBER TO BE CONFIRMED BY CLIENT --> <!-- REGISTRATION NUMBER TO BE CONFIRMED BY CLIENT --></p>
+        <div class="payment-badges" style="display: flex; gap: 12px; font-size: 1.5rem; color: #64748b;">
+          <span><i class="fab fa-cc-visa"></i></span>
+          <span><i class="fab fa-cc-mastercard"></i></span>
+          <span><i class="fab fa-cc-paypal"></i></span>
+          <span><i class="fab fa-cc-amex"></i></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

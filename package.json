@@ -1,0 +1,14 @@
+{
+  "name": "shrinkwraps-site",
+  "version": "1.0.0",
+  "description": "ShrinkWraps static website",
+  "scripts": {
+    "dev": "serve -l 3000 .",
+    "start": "serve -l 3000 ."
+  },
+  "devDependencies": {
+    "axios": "^1.20.0",
+    "cheerio": "^1.2.0",
+    "serve": "^14.2.4"
+  }
+}

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Product Details - shrinkwraps.co.uk</title>
+  <meta name="description" content="Commercial packaging specifications, trade quantity pricing, and technical data for warehouse and shipping operations.">
+  <link rel="icon" href="images/favicon-32x32.png" sizes="32x32">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/styles.min.css?v=5.0">
+  <link rel="stylesheet" href="css/components.min.css?v=5.0">
+  <link rel="stylesheet" href="css/shop.min.css?v=5.0">
+</head>
+<body>
+
+  <!-- ============ TOP ANNOUNCEMENT BAR ============ -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-left">
+        <a href="affiliate.html"><span class="nav-link-text">JOIN THE AFFILIATE PROGRAMME</span></a>
+        <span class="top-bar-divider">|</span>
+        <a href="terms.html"><span class="nav-link-text">TERMS</span></a>
+        <span class="top-bar-divider">|</span>
+        <span class="top-bar-promo"><i class="fas fa-truck-fast"></i> FREE NEXT-DAY SHIPPING ON ORDERS OVER £50 (EX. VAT)</span>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-social">
+          <a href="http://fb.com/shrinkwrapsuk" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/shrinkwrapsuk" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@shrinkwraps.co.uk" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <span class="top-bar-divider">|</span>
+        <a href="mailto:sales@shrinkwraps.co.uk"><i class="fas fa-envelope"></i> sales@shrinkwraps.co.uk</a>
+        <span class="top-bar-divider">|</span>
+        <a href="contact-us.html">CONTACT</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MAIN HEADER ============ -->
+  <header class="main-header">
+    <div class="container header-wrapper">
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation" style="display:none; font-size:22px; background:none; border:none; color:#0f172a; cursor:pointer;">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Site Logo -->
+      <a href="index.html" class="site-logo" aria-label="shrinkwraps.co.uk">
+        <img src="images/sw-logo.webp" alt="shrinkwraps.co.uk" style="max-width:240px; height:auto;">
+      </a>
+
+      <!-- Search Bar -->
+      <div class="header-search">
+        <form class="search-form" onsubmit="event.preventDefault(); const q = document.getElementById('headerSearchInput').value; location.href='shop.html?search=' + encodeURIComponent(q);">
+          <select class="search-category-select" id="searchCatSelect" onchange="location.href='shop.html?category=' + this.value" aria-label="Select Category">
+            <option value="all">All Categories</option>
+            <option value="stretch-film">Stretch Film &amp; Pallet Wrap</option>
+            <option value="polythene">Polythene &amp; Grip Bags</option>
+            <option value="tapes">Packing Tapes</option>
+            <option value="paper-products">Paper Products &amp; Labels</option>
+            <option value="mailing-bags">Mailing Bags</option>
+            <option value="royal-mail-pip-boxes">Royal Mail PIP Boxes</option>
+            <option value="refuse-sacks-2">Refuse Sacks</option>
+            <option value="pallet-top-covers">Pallet Top Covers</option>
+          </select>
+          <input type="text" id="headerSearchInput" class="search-input" placeholder="Search stretch films, tapes, mailing bags, boxes..." autocomplete="off">
+          <button type="submit" class="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+
+      <!-- Trade Phone Hotline -->
+      <a href="tel:02081234567" class="header-trade-phone">
+        <i class="fas fa-phone-volume"></i>
+        <div class="header-phone-text">
+          <span class="header-phone-label">Trade Enquiries</span>
+          <span class="header-phone-num">+44 020 8123 4567</span>
+        </div>
+      </a>
+
+      <!-- Cart Widget -->
+      <div class="header-cart-widget" id="openCartDrawerBtn">
+        <span class="cart-icon-wrap">
+          <i class="fas fa-shopping-basket"></i>
+        </span>
+        <span class="cart-text-wrap">
+          <span class="cart-subtotal-line" id="headerCartTotal">£0.00</span>
+          <span class="cart-count-line"><span class="cart-count-badge">0</span> items</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <nav class="nav-bar">
+    <div class="container nav-wrapper">
+      <div class="categories-dropdown">
+        <span class="categories-dropdown-btn">
+          <span class="menu-opener-icon"><i class="fas fa-bars"></i></span>
+          <span>BROWSE CATEGORIES</span>
+          <i class="fas fa-chevron-down" style="font-size: 11px; margin-left: auto;"></i>
+        </span>
+        <div class="categories-dropdown-menu">
+          <ul class="categories-vertical-nav">
+            <li><a href="shop.html?category=stretch-film">Stretch Film &amp; Pallet Wrap <span>(37)</span></a></li>
+            <li><a href="shop.html?category=polythene">Polythene &amp; Grip Bags <span>(15)</span></a></li>
+            <li><a href="shop.html?category=tapes">Packing Tapes <span>(15)</span></a></li>
+            <li><a href="shop.html?category=paper-products">Paper Products &amp; Labels <span>(10)</span></a></li>
+            <li><a href="shop.html?category=mailing-bags">Mailing Bags <span>(9)</span></a></li>
+            <li><a href="shop.html?category=royal-mail-pip-boxes">Royal Mail PIP Boxes <span>(5)</span></a></li>
+            <li><a href="shop.html?category=refuse-sacks-2">Refuse Sacks &amp; Bin Bags <span>(3)</span></a></li>
+            <li><a href="shop.html?category=pallet-top-covers">Pallet Top Covers <span>(2)</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main Navigation -->
+      <ul class="main-nav-list">
+        <li><a href="index.html" class="main-nav-link">HOME</a></li>
+        <li><a href="shop.html" class="main-nav-link active">SHOP CATALOG</a></li>
+        <li><a href="shop.html?category=stretch-film" class="main-nav-link">STRETCH FILM</a></li>
+        <li><a href="shop.html?category=mailing-bags" class="main-nav-link">MAILING BAGS</a></li>
+        <li><a href="shop.html?category=tapes" class="main-nav-link">TAPES</a></li>
+        <li><a href="shop.html?category=polythene" class="main-nav-link">POLYTHENE</a></li>
+        <li><a href="about-us.html" class="main-nav-link">ABOUT US</a></li>
+        <li><a href="contact-us.html" class="main-nav-link">TRADE ENQUIRIES</a></li>
+      </ul>
+
+      <!-- Right Side Actions -->
+      <div class="nav-right-actions">
+        <a href="contact-us.html" class="nav-action-link"><i class="far fa-user"></i> LOGIN / REGISTER</a>
+        <span class="nav-divider">|</span>
+        <a href="shop.html" class="nav-action-link"><i class="far fa-heart"></i> WISHLIST <span class="action-count">0</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ PAGE BREADCRUMBS BANNER ============ -->
+  <div class="page-header" style="background: linear-gradient(135deg, #0f3e2e 0%, #165b43 100%); padding: 1.75rem 0; margin-bottom: 2.25rem; border-bottom: 3px solid #10b981;">
+    <div class="container">
+      <div class="breadcrumbs" id="detailBreadcrumbs" style="color: #a7f3d0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+        <a href="index.html" style="color: #a7f3d0; text-decoration: none;">Home</a> / <a href="shop.html" style="color: #a7f3d0; text-decoration: none;">Shop Catalog</a> / <span id="breadcrumbCategory" style="color: #a7f3d0;">Category</span> / <span id="breadcrumbProductName" style="color: #ffffff; font-weight: 700;">Product</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DETAIL CONTENT SECTION ============ -->
+  <section style="padding-bottom: 4.5rem;">
+    <div class="container">
+      <div id="productDetailContainer">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Woodmart Detailed Tabs Section -->
+      <div class="woodmart-tabs-wrapper" id="productTabsWrapper">
+        <div class="woodmart-tabs-nav">
+          <button class="woodmart-tab-btn active" onclick="switchProductTab('tabSpecs', this)">
+            <i class="fas fa-list-check" style="margin-right: 6px;"></i> Technical Specifications
+          </button>
+          <button class="woodmart-tab-btn" id="tabBulkBtn" onclick="switchProductTab('tabBulk', this)">
+            <i class="fas fa-boxes-stacked" style="margin-right: 6px;"></i> Bulk Wholesale Pricing
+          </button>
+          <button class="woodmart-tab-btn" onclick="switchProductTab('tabShipping', this)">
+            <i class="fas fa-truck-fast" style="margin-right: 6px;"></i> UK Shipping &amp; Dispatch
+          </button>
+          <button class="woodmart-tab-btn" onclick="switchProductTab('tabReviews', this)">
+            <i class="fas fa-star" style="margin-right: 6px;"></i> Customer Reviews (<span id="tabReviewCount">0</span>)
+          </button>
+        </div>
+
+        <div class="woodmart-tab-pane active" id="tabSpecs">
+          <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1.25rem; color: #0f172a; font-weight: 800;">Technical Data &amp; Specifications</h3>
+          <table class="specs-table" id="detailSpecsTable">
+            <!-- Dynamically populated -->
+          </table>
+        </div>
+
+        <div class="woodmart-tab-pane" id="tabBulk">
+          <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 0.5rem; color: #0f172a; font-weight: 800;">Tiered Trade &amp; Wholesale Discounts</h3>
+          <p style="color: var(--text-medium); margin-bottom: 1.5rem; font-size: 0.95rem;">Save significantly when ordering multi-pack boxes or full pallet consignments. Trade account pricing is applied automatically in the basket.</p>
+          <div id="bulkTableContainer">
+            <table class="bulk-tier-table" id="detailBulkTierTable">
+              <thead>
+                <tr>
+                  <th>Order Quantity</th>
+                  <th>Discount Level</th>
+                  <th>Unit Price (ex. VAT)</th>
+                  <th>Fulfillment Time</th>
+                </tr>
+              </thead>
+              <tbody id="detailBulkTierBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+          <div id="detailBulkFallback" style="display: none; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; padding: 2.5rem 1.5rem; text-align: center; margin-top: 1rem;">
+            <i class="fas fa-boxes-stacked" style="font-size: 2.25rem; color: var(--primary-color); margin-bottom: 0.75rem;"></i>
+            <h4 style="margin-bottom: 0.5rem; font-family: var(--font-heading); color: var(--text-dark);">Custom Trade &amp; Volume Pricing Available</h4>
+            <p style="color: var(--text-medium); max-width: 520px; margin: 0 auto 1.25rem; font-size: 0.95rem;">Contact us for bulk pallet trade discounts, bespoke dimension requirements, and enterprise volume scheduling.</p>
+            <a href="contact-us.html" class="btn btn-primary btn-sm" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-envelope"></i> Request Bulk Quote</a>
+          </div>
+        </div>
+
+        <div class="woodmart-tab-pane" id="tabShipping">
+          <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; color: #0f172a; font-weight: 800;">UK Mainland Delivery &amp; Depot Network</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; line-height: 1.7; font-size: 0.95rem; color: var(--text-medium);">
+            <div style="background: #f8fafc; padding: 1.5rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+              <h4 style="color: var(--text-dark); margin-bottom: 0.5rem; font-family: var(--font-heading); font-weight: 700;"><i class="fas fa-clock" style="color: var(--primary-color);"></i> Same-Day Dispatch Cutoff</h4>
+              <p>Place your order before <strong>2:00 PM Monday–Friday</strong> for guaranteed same-day dispatch from our regional distribution centres.</p>
+            </div>
+            <div style="background: #f8fafc; padding: 1.5rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+              <h4 style="color: var(--text-dark); margin-bottom: 0.5rem; font-family: var(--font-heading); font-weight: 700;"><i class="fas fa-truck-moving" style="color: var(--primary-color);"></i> Courier &amp; Pallet Logistics</h4>
+              <p>Parcel orders are handled via DPD &amp; Royal Mail Tracked 24/48. Pallet consignments are dispatched via Palletways with tail-lift delivery available upon request.</p>
+            </div>
+            <div style="background: #f8fafc; padding: 1.5rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+              <h4 style="color: var(--text-dark); margin-bottom: 0.5rem; font-family: var(--font-heading); font-weight: 700;"><i class="fas fa-shield-alt" style="color: var(--primary-color);"></i> Damaged Cargo Guarantee</h4>
+              <p>All items are securely boxed and wrapped in heavy-duty shrink wrap. If any parcel arrives damaged, we provide instant same-day replacements.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="woodmart-tab-pane" id="tabReviews">
+          <div style="display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; align-items: start;">
+            <div style="background: #f8fafc; padding: 1.75rem; border-radius: 10px; text-align: center; border: 1px solid #e2e8f0;">
+              <div style="font-size: 3.5rem; font-family: var(--font-heading); font-weight: 900; color: #0f3e2e; line-height: 1;" id="detailRatingNumber">4.9</div>
+              <div style="color: #f59e0b; font-size: 1.25rem; margin: 0.5rem 0;" id="detailRatingStars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <p style="font-size: 0.85rem; color: #64748b;">Based on <span id="detailReviewCountNumber">38</span> verified commercial customer reviews</p>
+            </div>
+            <div>
+              <h4 style="font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 1.25rem; font-weight: 700; color: #0f172a;">Verified Customer Feedback</h4>
+              <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                <div style="padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff;">
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <strong style="color: var(--text-dark);">Mark D. (Logistics Manager, Manchester)</strong>
+                    <div style="color: #f59e0b; font-size: 0.85rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                  </div>
+                  <p style="font-size: 0.9rem; color: var(--text-medium); margin: 0;">"Exceptional quality stretch film. The thickness holds pallet loads securely during transit without splitting or tearing. Delivery arrived next morning before 10 AM."</p>
+                </div>
+                <div style="padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff;">
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <strong style="color: var(--text-dark);">Sarah H. (Ecommerce Operations, Birmingham)</strong>
+                    <div style="color: #f59e0b; font-size: 0.85rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                  </div>
+                  <p style="font-size: 0.9rem; color: var(--text-medium); margin: 0;">"We order both the mailing bags and pallet wrap in bulk. The adhesive strips on the bags are ultra-strong and opaque. Fantastic service and trade pricing."</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ RELATED PRODUCTS SECTION ============ -->
+  <section class="products-section" style="background-color: #f8fafc; padding: 4rem 0; border-top: 1px solid #e2e8f0;">
+    <div class="container">
+      <div class="section-title">
+        <h2 style="font-family: var(--font-heading); font-weight: 800; color: #0f172a;">Frequently Bought Together</h2>
+        <p style="color: #64748b;">Recommended packaging essentials for your warehouse operations</p>
+      </div>
+      <div class="products-grid" id="relatedProductsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Office -->
+        <div class="footer-col-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="images/sw-logo.webp" alt="shrinkwraps.co.uk" style="max-width: 210px; display: block; margin-bottom: 16px;">
+          </a>
+          <p style="font-size: 13px; color: #94a3b8; line-height: 1.6; margin-bottom: 8px;">
+            <strong>Registered office address:</strong><br>
+            RAJDHANI UK LIMITED<br>
+            128 City Road, London, United Kingdom, EC1V 2NX
+          </p>
+          <div class="footer-social" style="margin-top: 14px;">
+            <a href="http://fb.com/shrinkwrapsuk" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/shrinkwrapsuk" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@shrinkwraps.co.uk" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: OUR STORES -->
+        <div>
+          <h4 class="footer-title">OUR STORES</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">London</a></li>
+            <li><a href="shop.html">Birmingham</a></li>
+            <li><a href="shop.html">Manchester</a></li>
+            <li><a href="shop.html">Leicester</a></li>
+            <li><a href="shop.html">Glasgow</a></li>
+            <li><a href="shop.html">Leeds</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: USEFUL LINKS -->
+        <div>
+          <h4 class="footer-title">USEFUL LINKS</h4>
+          <ul class="footer-links">
+            <li><a href="terms.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Returns</a></li>
+            <li><a href="about-us.html">Careers</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="blog.html">Latest News</a></li>
+            <li><a href="shop.html">Our Sitemap</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: CATEGORIES -->
+        <div>
+          <h4 class="footer-title">CATEGORIES</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=stretch-film">Stretch Film</a></li>
+            <li><a href="shop.html?category=mailing-bags">Mailing Bags</a></li>
+            <li><a href="shop.html?category=tapes">Tapes</a></li>
+            <li><a href="shop.html?category=polythene">Polythene</a></li>
+            <li><a href="shop.html?category=refuse-sacks-2">Refuse Sacks</a></li>
+            <li><a href="shop.html?category=royal-mail-pip-boxes">Pip Boxes</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: CUSTOMER SERVICE -->
+        <div>
+          <h4 class="footer-title">CUSTOMER SERVICE</h4>
+          <ul class="footer-links">
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="terms.html">Delivery Information</a></li>
+            <li><a href="terms.html">Shipping</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="terms.html">Returns</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bottom-footer" style="padding: 20px 0; border-top: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
+        <p style="font-size: 12px; color: #64748b; margin: 0;">&copy; 2026 shrinkwraps.co.uk - Operated by RAJDHANI UK LIMITED. All Rights Reserved. <!-- VAT NUMBER TO BE CONFIRMED BY CLIENT --> <!-- REGISTRATION NUMBER TO BE CONFIRMED BY CLIENT --></p>
+        <div class="payment-badges" style="display: flex; gap: 12px; font-size: 1.5rem; color: #64748b;">
+          <span><i class="fab fa-cc-visa"></i></span>
+          <span><i class="fab fa-cc-mastercard"></i></span>
+          <span><i class="fab fa-cc-paypal"></i></span>
+          <span><i class="fab fa-cc-amex"></i></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CART DRAWER ============ -->
+  <div class="cart-drawer-backdrop" id="cartDrawerBackdrop"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <h3><i class="fas fa-shopping-basket"></i> Your Shopping Basket</h3>
+      <button class="close-drawer-btn" id="closeCartDrawerBtn">&times;</button>
+    </div>
+    <div class="drawer-body" id="drawerCartItems"></div>
+    <div class="drawer-footer">
+      <div class="drawer-subtotal">
+        <span>Subtotal (ex. VAT):</span>
+        <span id="drawerSubtotalAmount">£0.00</span>
+      </div>
+      <div class="drawer-actions">
+        <a href="cart.html" class="btn btn-outline" style="width: 100%; border-color: #cbd5e1; color: #0f172a;">View Basket</a>
+        <a href="checkout.html" class="btn btn-primary" style="width: 100%;">Proceed to Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/4402081234567" target="_blank" class="floating-whatsapp" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="js/data.min.js?v=5.0"></script>
+  <script src="js/cart.min.js?v=5.0"></script>
+  <script src="js/app.min.js?v=5.0"></script>
+  <script>
+    function getProductPriceDisplay(p) {
+      if (!p) return '£0.00';
+      if (p.priceRange && Array.isArray(p.priceRange) && p.priceRange.length === 2 && p.priceRange[0] !== p.priceRange[1]) {
+        return `£${p.priceRange[0].toFixed(2)} - £${p.priceRange[1].toFixed(2)}`;
+      }
+      if (p.hasVariations && p.variations && p.variations.length > 0) {
+        const prices = p.variations.map(v => v.price).filter(pr => typeof pr === 'number' && !isNaN(pr));
+        if (prices.length > 0) {
+          const min = Math.min(...prices);
+          const max = Math.max(...prices);
+          if (min !== max) return `£${min.toFixed(2)} - £${max.toFixed(2)}`;
+          return `£${min.toFixed(2)}`;
+        }
+      }
+      const base = p.basePrice || p.price || 0;
+      return `£${Number(base).toFixed(2)}`;
+    }
+
+    let currentProduct = null;
+    let selectedAttributes = {};
+    let activeVariation = null;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get('id') || 'p-1';
+      currentProduct = (typeof PRODUCTS_DATA !== 'undefined') ? (PRODUCTS_DATA.find(p => p.id === id) || PRODUCTS_DATA[0]) : null;
+
+      document.title = `${currentProduct.name} - shrinkwraps.co.uk`;
+
+      // Update Breadcrumbs
+      const catObj = (typeof CATEGORIES !== 'undefined') ? CATEGORIES.find(c => c.id === currentProduct.category) : null;
+      const catName = catObj ? catObj.name : currentProduct.category.replace('-', ' ');
+      document.getElementById('breadcrumbCategory').innerHTML = `<a href="shop.html?category=${currentProduct.category}" style="color: #a7f3d0; text-decoration: none;">${catName}</a>`;
+      document.getElementById('breadcrumbProductName').textContent = currentProduct.name;
+      document.getElementById('tabReviewCount').textContent = currentProduct.reviewsCount || 32;
+      document.getElementById('detailReviewCountNumber').textContent = currentProduct.reviewsCount || 32;
+      document.getElementById('detailRatingNumber').textContent = (currentProduct.rating || 5).toFixed(1);
+
+      // Initialize default attributes
+      if (currentProduct.hasVariations && currentProduct.attributes) {
+        currentProduct.attributes.forEach(attr => {
+          selectedAttributes[attr.name] = attr.options[0];
+        });
+        resolveMatchingVariation();
+      }
+
+      renderProductDetail();
+      renderSpecsAndTabs();
+      renderRelatedProducts();
+    });
+
+    function resolveMatchingVariation() {
+      if (!currentProduct.hasVariations || !currentProduct.variations) {
+        activeVariation = null;
+        return;
+      }
+
+      let match = currentProduct.variations.find(v => {
+        return Object.entries(selectedAttributes).every(([attrName, selectedVal]) => {
+          return v.attributes[attrName] === selectedVal;
+        });
+      });
+
+      if (!match) {
+        match = currentProduct.variations[0];
+      }
+
+      activeVariation = match;
+    }
+
+    function renderProductDetail() {
+      const container = document.getElementById('productDetailContainer');
+      const p = currentProduct;
+
+      const currentPrice = activeVariation ? activeVariation.price : (p.basePrice || p.price || 0);
+      const currentOrigPrice = activeVariation ? activeVariation.originalPrice : p.originalPrice;
+      const currentSku = activeVariation ? activeVariation.sku : p.sku;
+      const currentInStock = activeVariation ? activeVariation.inStock : p.inStock;
+      const stockCount = activeVariation && activeVariation.stockCount ? activeVariation.stockCount : 120;
+      const activeImg = (activeVariation && activeVariation.image) ? activeVariation.image : p.image;
+
+      const incVat = (currentPrice * 1.20).toFixed(2);
+      const exVat = currentPrice.toFixed(2);
+
+      container.innerHTML = `
+        <div class="product-detail-grid">
+          <!-- Gallery Column -->
+          <div>
+            <div class="gallery-main" style="background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; padding: 1.5rem; text-align: center; position: relative;">
+              ${p.badge ? `<div class="pill-badge pill-badge-${p.badge.toLowerCase()}" style="position: absolute; top: 1rem; left: 1rem; z-index: 5;"><span class="badge-dot"></span>${p.badge}</div>` : `<div class="pill-badge pill-badge-trade" style="position: absolute; top: 1rem; left: 1rem; z-index: 5;"><span class="badge-dot"></span>TRADE PRICE</div>`}
+              <img id="mainGalleryImg" src="${activeImg}" alt="${p.name}" style="max-height: 420px; max-width: 100%; object-fit: contain; margin: 0 auto; display: block;">
+            </div>
+            <div class="gallery-thumbs" style="display: flex; gap: 0.75rem; margin-top: 1rem;">
+              ${(p.images || [p.image]).map((img, idx) => `
+                <div class="thumb-item ${img === activeImg || (idx === 0 && !activeVariation?.image) ? 'active' : ''}" onclick="changeMainImg(this, '${img}')" style="cursor: pointer; border: 2px solid ${img === activeImg ? '#165b43' : '#e2e8f0'}; border-radius: 8px; padding: 4px; width: 70px; height: 70px; background: #ffffff;">
+                  <img src="${img}" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Product Info Column -->
+          <div class="product-info-col">
+            <span class="product-cat" style="color: #165b43; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">${p.category.replace(/-/g, ' ')}</span>
+            <h1 style="font-family: var(--font-heading); font-size: 1.85rem; font-weight: 800; color: #0f172a; margin: 0.35rem 0 0.75rem; line-height: 1.25;">${p.name}</h1>
+            
+            <div class="product-meta-row" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+              <span class="product-sku-tag" style="font-size: 0.85rem; color: #64748b;">SKU: <strong id="detailSku" style="color: #0f172a;">${currentSku}</strong></span>
+              <div id="detailStockBadge" class="stock-status-pill ${currentInStock ? 'stock-in-stock' : 'stock-out-of-stock'}">
+                <i class="fas ${currentInStock ? 'fa-check-circle' : 'fa-times-circle'}"></i> 
+                <span>${currentInStock ? `In Stock (${stockCount} units available)` : 'Out of Stock'}</span>
+              </div>
+            </div>
+
+            <div class="product-rating" style="margin-bottom: 1.25rem;">
+              ${'<i class="fas fa-star" style="color: #f59e0b;"></i>'.repeat(Math.floor(p.rating || 5))}
+              <span style="color: var(--text-dark); font-weight: 700; margin-left: 0.35rem;">${(p.rating || 5).toFixed(1)}</span>
+              <span class="rating-count" style="color: #64748b; font-size: 0.85rem;">(${p.reviewsCount || 32} verified trade reviews)</span>
+            </div>
+
+            <div class="detail-price-box" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.5rem;">
+              <div class="detail-price-row" style="display: flex; align-items: baseline; gap: 0.75rem;">
+                <span class="detail-price" id="detailPriceDisplay" style="font-size: 2rem; font-weight: 800; color: #0f3e2e; font-family: var(--font-heading);">£${exVat}</span>
+                ${currentOrigPrice ? `<span class="detail-price-orig" id="detailOrigPriceDisplay" style="text-decoration: line-through; color: #94a3b8; font-size: 1.1rem;">£${currentOrigPrice.toFixed(2)}</span>` : ''}
+              </div>
+              <div class="price-vat-note" style="font-size: 0.9rem; color: #475569; margin-top: 0.25rem;">
+                <span><strong id="detailExVatDisplay" style="color: #0f172a;">£${exVat}</strong> ex. VAT</span>
+                <span>•</span>
+                <span><strong id="detailIncVatDisplay" style="color: #64748b;">£${incVat}</strong> inc. 20% VAT</span>
+              </div>
+            </div>
+
+            <p class="detail-desc" style="color: var(--text-medium); line-height: 1.65; margin-bottom: 1.5rem; font-size: 0.95rem;">${p.description}</p>
+
+            <!-- Variation Selectors -->
+            ${p.hasVariations && p.attributes ? `
+              <div class="variation-selectors-wrapper" style="margin-bottom: 1.5rem;">
+                ${p.attributes.map(attr => `
+                  <div class="variation-group" style="margin-bottom: 1.25rem;">
+                    <div class="variation-header" style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 700; color: #0f172a;">
+                      <span>${attr.name}:</span>
+                      <span class="variation-selected-val" id="selectedLabel_${sanitizeAttrKey(attr.name)}" style="color: #165b43;">${selectedAttributes[attr.name] || attr.options[0]}</span>
+                    </div>
+                    ${attr.options.length > 8 ? `
+                      <select class="form-control variation-select-dropdown" 
+                        onchange="selectVariationOption('${attr.name}', this.value, this)" 
+                        style="width: 100%; padding: 11px 14px; font-weight: 600; font-size: 0.95rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background-color: #ffffff; cursor: pointer; color: #0f172a;">
+                        ${attr.options.map(opt => `
+                          <option value="${opt.replace(/"/g, '&quot;')}" ${selectedAttributes[attr.name] === opt ? 'selected' : ''}>${opt}</option>
+                        `).join('')}
+                      </select>
+                    ` : `
+                      <div class="variation-swatches" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        ${attr.options.map(opt => `
+                          <button type="button" 
+                            class="swatch-btn ${selectedAttributes[attr.name] === opt ? 'active' : ''}" 
+                            onclick="selectVariationOption('${attr.name}', '${opt.replace(/'/g, "\\'")}', this)">
+                            ${selectedAttributes[attr.name] === opt ? '<i class="fas fa-check swatch-check"></i>' : ''}
+                            <span>${opt}</span>
+                          </button>
+                        `).join('')}
+                      </div>
+                    `}
+                  </div>
+                `).join('')}
+              </div>
+            ` : ''}
+
+            <!-- Add to Basket & Qty -->
+            <div class="detail-actions" style="display: flex; gap: 1rem; align-items: center; margin-bottom: 2rem;">
+              <div class="quantity-selector">
+                <button type="button" onclick="changeQty(-1)" aria-label="Decrease quantity">-</button>
+                <input type="number" id="detailQtyInput" value="1" min="1" readonly aria-label="Selected quantity">
+                <button type="button" onclick="changeQty(1)" aria-label="Increase quantity">+</button>
+              </div>
+
+              <button class="btn btn-primary btn-add-basket" id="addToBasketBtn" onclick="handleAddBasket()" style="flex: 1; height: 50px; font-weight: 800; font-size: 1rem; letter-spacing: 0.03em;">
+                <i class="fas fa-shopping-bag"></i> ADD TO BASKET
+              </button>
+            </div>
+
+            <!-- Trust Bar -->
+            <div class="detail-trust-box" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem;">
+              <div class="trust-item" style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; font-size: 0.85rem; color: #334155;">
+                <i class="fas fa-bolt" style="color: #10b981; font-size: 1.1rem; width: 20px;"></i>
+                <span><strong>Same Day Dispatch:</strong> Order by 2:00 PM for dispatch today</span>
+              </div>
+              <div class="trust-item" style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; font-size: 0.85rem; color: #334155;">
+                <i class="fas fa-shield-halved" style="color: #10b981; font-size: 1.1rem; width: 20px;"></i>
+                <span><strong>Trade Quality Guaranteed:</strong> 100% Virgin Polymer ISO Certified</span>
+              </div>
+              <div class="trust-item" style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; color: #334155;">
+                <i class="fas fa-truck" style="color: #10b981; font-size: 1.1rem; width: 20px;"></i>
+                <span><strong>Free UK Delivery:</strong> On all orders over £50 (ex. VAT)</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      `;
+    }
+
+    function sanitizeAttrKey(key) {
+      return key.replace(/[^a-zA-Z0-9]/g, '_');
+    }
+
+    function selectVariationOption(attrName, optionValue, triggerElement) {
+      selectedAttributes[attrName] = optionValue;
+      
+      const labelEl = document.getElementById(`selectedLabel_${sanitizeAttrKey(attrName)}`);
+      if (labelEl) labelEl.textContent = optionValue;
+
+      if (triggerElement && triggerElement.tagName === 'BUTTON') {
+        const parentGroup = triggerElement.closest('.variation-group');
+        if (parentGroup) {
+          parentGroup.querySelectorAll('.swatch-btn').forEach(b => {
+            b.classList.remove('active');
+            const checkIcon = b.querySelector('.swatch-check');
+            if (checkIcon) checkIcon.remove();
+          });
+          triggerElement.classList.add('active');
+          triggerElement.insertAdjacentHTML('afterbegin', '<i class="fas fa-check swatch-check"></i>');
+        }
+      }
+
+      resolveMatchingVariation();
+
+      if (activeVariation) {
+        const exVat = activeVariation.price.toFixed(2);
+        const incVat = (activeVariation.price * 1.20).toFixed(2);
+        
+        const priceDisplay = document.getElementById('detailPriceDisplay');
+        if (priceDisplay) priceDisplay.textContent = `£${exVat}`;
+
+        const incVatDisplay = document.getElementById('detailIncVatDisplay');
+        if (incVatDisplay) incVatDisplay.textContent = `£${incVat}`;
+
+        const exVatDisplay = document.getElementById('detailExVatDisplay');
+        if (exVatDisplay) exVatDisplay.textContent = `£${exVat}`;
+
+        const origPriceDisplay = document.getElementById('detailOrigPriceDisplay');
+        if (origPriceDisplay) {
+          if (activeVariation.originalPrice) {
+            origPriceDisplay.textContent = `£${activeVariation.originalPrice.toFixed(2)}`;
+            origPriceDisplay.style.display = 'inline';
+          } else {
+            origPriceDisplay.style.display = 'none';
+          }
+        }
+
+        const skuEl = document.getElementById('detailSku');
+        if (skuEl) skuEl.textContent = activeVariation.sku;
+
+        const stockBadge = document.getElementById('detailStockBadge');
+        if (stockBadge) {
+          const inStock = activeVariation.inStock;
+          const count = activeVariation.stockCount || 100;
+          stockBadge.className = `stock-status-pill ${inStock ? 'stock-in-stock' : 'stock-out-of-stock'}`;
+          stockBadge.innerHTML = `<i class="fas ${inStock ? 'fa-check-circle' : 'fa-times-circle'}"></i> <span>${inStock ? `In Stock (${count} units available)` : 'Out of Stock'}</span>`;
+        }
+
+        if (activeVariation.image) {
+          const mainImg = document.getElementById('mainGalleryImg');
+          if (mainImg) mainImg.src = activeVariation.image;
+        }
+      }
+    }
+
+    function changeMainImg(el, src) {
+      document.querySelectorAll('.thumb-item').forEach(t => {
+        t.classList.remove('active');
+        t.style.borderColor = '#e2e8f0';
+      });
+      el.classList.add('active');
+      el.style.borderColor = '#165b43';
+      const mainImg = document.getElementById('mainGalleryImg');
+      if (mainImg) mainImg.src = src;
+    }
+
+    function changeQty(delta) {
+      const input = document.getElementById('detailQtyInput');
+      let val = parseInt(input.value) + delta;
+      if (val < 1) val = 1;
+      input.value = val;
+    }
+
+    function handleAddBasket() {
+      const qty = parseInt(document.getElementById('detailQtyInput').value) || 1;
+      const variationId = activeVariation ? activeVariation.id : null;
+      cartManager.addItem(currentProduct.id, qty, variationId);
+    }
+
+    function switchProductTab(tabId, btn) {
+      document.querySelectorAll('.woodmart-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.woodmart-tab-pane').forEach(p => p.classList.remove('active'));
+      
+      btn.classList.add('active');
+      const targetPane = document.getElementById(tabId);
+      if (targetPane) targetPane.classList.add('active');
+    }
+
+    function renderSpecsAndTabs() {
+      const p = currentProduct;
+      
+      const specsTable = document.getElementById('detailSpecsTable');
+      if (specsTable) {
+        specsTable.innerHTML = Object.entries(p.specs || {}).map(([key, val]) => `
+          <tr>
+            <td style="font-weight: 600; color: #475569; width: 40%;">${key}</td>
+            <td><strong>${val}</strong></td>
+          </tr>
+        `).join('') + `
+          <tr>
+            <td style="font-weight: 600; color: #475569;">Brand &amp; Supplier</td>
+            <td><strong>shrinkwraps.co.uk (RAJDHANI UK LIMITED)</strong></td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600; color: #475569;">Quality Standard</td>
+            <td><strong>ISO 9001:2015 Manufacturing Quality Certified</strong></td>
+          </tr>
+        `;
+      }
+
+      const bulkTableContainer = document.getElementById('bulkTableContainer');
+      const bulkFallback = document.getElementById('detailBulkFallback');
+      const bulkBody = document.getElementById('detailBulkTierBody');
+      const hasBulkDiscounts = Array.isArray(p.bulkDiscounts) && p.bulkDiscounts.length > 0;
+
+      if (hasBulkDiscounts) {
+        if (bulkTableContainer) bulkTableContainer.style.display = 'block';
+        if (bulkFallback) bulkFallback.style.display = 'none';
+        if (bulkBody) {
+          bulkBody.innerHTML = p.bulkDiscounts.map(d => {
+            const qty = d.quantity || d.qty || '-';
+            const disc = d.discount || d.level || 'Volume Trade Price';
+            const unitPrice = d.pricePerUnit || (d.unitPrice ? `£${Number(d.unitPrice).toFixed(2)}` : (p.price ? `£${Number(p.price).toFixed(2)}` : ''));
+            const fulfillment = d.fulfillment || '<i class="fas fa-truck" style="color: #10b981; margin-right: 4px;"></i> Same Day Dispatch';
+            return `
+              <tr>
+                <td><strong>${qty}</strong></td>
+                <td><span class="pill-badge pill-badge-bestseller" style="font-size: 0.75rem;"><span class="badge-dot"></span>${disc}</span></td>
+                <td><strong style="color: var(--primary-color); font-size: 1.05rem;">${unitPrice}</strong></td>
+                <td>${fulfillment}</td>
+              </tr>
+            `;
+          }).join('');
+        }
+      } else {
+        if (bulkTableContainer) bulkTableContainer.style.display = 'none';
+        if (bulkFallback) bulkFallback.style.display = 'block';
+      }
+    }
+
+    function renderRelatedProducts() {
+      const relatedGrid = document.getElementById('relatedProductsGrid');
+      if (!relatedGrid) return;
+      
+      const related = PRODUCTS_DATA.filter(p => p.category === currentProduct.category && p.id !== currentProduct.id).slice(0, 4);
+      relatedGrid.innerHTML = related.map(p => `
+        <div class="product-card">
+          ${p.badge ? `<div class="pill-badge pill-badge-${p.badge.toLowerCase()}"><span class="badge-dot"></span>${p.badge}</div>` : `<div class="pill-badge pill-badge-trade"><span class="badge-dot"></span>TRADE PRICE</div>`}
+          <div class="product-thumb">
+            <a href="product-detail.html?id=${p.id}">
+              <img src="${p.image}" alt="${p.name}" loading="lazy">
+            </a>
+          </div>
+          <div class="product-details">
+            <span class="product-cat">${(p.category || '').replace(/-/g, ' ')}</span>
+            <h3 class="product-title"><a href="product-detail.html?id=${p.id}">${p.name}</a></h3>
+            <div class="product-rating">
+              ${'<i class="fas fa-star" style="color: #f59e0b;"></i>'.repeat(Math.floor(p.rating || 5))}
+              <span class="rating-count">(${p.reviewsCount || 32})</span>
+            </div>
+            ${p.hasVariations ? `<div class="options-count-tag"><i class="fas fa-sliders"></i> ${p.variations.length} Options Available</div>` : ''}
+            <div class="product-bottom">
+              <div class="product-price">
+                <span class="price-current">${getProductPriceDisplay(p)}</span>
+                <span class="price-vat-label">ex. VAT</span>
+              </div>
+              ${p.hasVariations ? `
+                <a href="product-detail.html?id=${p.id}" class="select-options-btn">
+                  <span>Options</span> <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i>
+                </a>
+              ` : `
+                <button class="add-cart-btn" onclick="cartManager.addItem('${p.id}')" title="Add to Basket">
+                  <i class="fas fa-shopping-bag"></i>
+                </button>
+              `}
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+</html>

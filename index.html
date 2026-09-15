@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>#1 Packaging &amp; Shrink Wrap Supplier in UK - shrinkwraps.co.uk</title>
+  <meta name="description" content="Shrinkwraps is the #1 trusted supplier of commercial packaging, shrink wrap, and stretch film in the UK. Direct factory trade pricing, next-day delivery, and tiered wholesale discounts for businesses nationwide.">
+  <link rel="icon" href="images/favicon-32x32.png" sizes="32x32">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/styles.min.css?v=3.1">
+  <link rel="stylesheet" href="css/components.min.css?v=3.1">
+</head>
+<body>
+
+  <!-- ============ TOP ANNOUNCEMENT BAR ============ -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-left">
+        <a href="affiliate.html"><span class="nav-link-text">JOIN THE AFFILIATE PROGRAMME</span></a>
+        <span class="top-bar-divider">|</span>
+        <a href="terms.html"><span class="nav-link-text">TERMS</span></a>
+        <span class="top-bar-divider">|</span>
+        <span class="top-bar-promo"><i class="fas fa-truck-fast"></i> FREE NEXT-DAY SHIPPING ON ORDERS OVER £50 (EX. VAT)</span>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-social">
+          <a href="http://fb.com/shrinkwrapsuk" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/shrinkwrapsuk" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@shrinkwraps.co.uk" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <span class="top-bar-divider">|</span>
+        <a href="mailto:sales@shrinkwraps.co.uk"><i class="fas fa-envelope"></i> sales@shrinkwraps.co.uk</a>
+        <span class="top-bar-divider">|</span>
+        <a href="contact-us.html">CONTACT</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MAIN HEADER ============ -->
+  <header class="main-header">
+    <div class="container header-wrapper">
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation" style="display:none; font-size:22px; background:none; border:none; color:#0f172a; cursor:pointer;">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Site Logo -->
+      <a href="index.html" class="site-logo" aria-label="shrinkwraps.co.uk">
+        <img src="images/sw-logo.webp" alt="shrinkwraps.co.uk" style="max-width:240px; height:auto;">
+      </a>
+
+      <!-- Search Bar -->
+      <div class="header-search">
+        <form class="search-form" onsubmit="event.preventDefault(); const cat = document.getElementById('searchCatSelect').value; const q = document.getElementById('headerSearchInput').value; location.href='shop.html?' + (cat !== '0' ? 'category=' + cat + '&' : '') + 'search=' + encodeURIComponent(q);">
+          <select class="search-category-select" id="searchCatSelect" aria-label="Select Category">
+            <option value="0">All Categories</option>
+            <option value="stretch-film">Stretch Film &amp; Pallet Wrap</option>
+            <option value="polythene">Polythene &amp; Grip Bags</option>
+            <option value="tapes">Packing Tapes</option>
+            <option value="paper-products">Paper Products &amp; Labels</option>
+            <option value="mailing-bags">Mailing Bags</option>
+            <option value="royal-mail-pip-boxes">Royal Mail PIP Boxes</option>
+            <option value="refuse-sacks-2">Refuse Sacks</option>
+            <option value="pallet-top-covers">Pallet Top Covers</option>
+          </select>
+          <input type="text" id="headerSearchInput" class="search-input" placeholder="Search stretch films, tapes, mailing bags, boxes..." autocomplete="off">
+          <button type="submit" class="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+
+      <!-- Trade Phone Hotline -->
+      <a href="tel:02081234567" class="header-trade-phone">
+        <i class="fas fa-phone-volume"></i>
+        <div class="header-phone-text">
+          <span class="header-phone-label">Trade Enquiries</span>
+          <span class="header-phone-num">+44 020 8123 4567</span>
+        </div>
+      </a>
+
+      <!-- Cart Widget -->
+      <div class="header-cart-widget" id="openCartDrawerBtn">
+        <span class="cart-icon-wrap">
+          <i class="fas fa-shopping-basket"></i>
+        </span>
+        <span class="cart-text-wrap">
+          <span class="cart-subtotal-line" id="headerCartTotal">£0.00</span>
+          <span class="cart-count-line"><span class="cart-count-badge">0</span> items</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <nav class="nav-bar">
+    <div class="container nav-wrapper">
+      <!-- Browse Categories Dropdown -->
+      <div class="categories-dropdown">
+        <span class="categories-dropdown-btn">
+          <span class="menu-opener-icon"><i class="fas fa-bars"></i></span>
+          <span>BROWSE CATEGORIES</span>
+          <i class="fas fa-chevron-down" style="font-size: 11px; margin-left: auto;"></i>
+        </span>
+        <div class="categories-dropdown-menu">
+          <ul class="categories-vertical-nav">
+            <li><a href="shop.html?category=stretch-film">Stretch Film &amp; Pallet Wrap <span>(37)</span></a></li>
+            <li><a href="shop.html?category=polythene">Polythene &amp; Grip Bags <span>(15)</span></a></li>
+            <li><a href="shop.html?category=tapes">Packing Tapes <span>(15)</span></a></li>
+            <li><a href="shop.html?category=paper-products">Paper Products &amp; Labels <span>(10)</span></a></li>
+            <li><a href="shop.html?category=mailing-bags">Mailing Bags <span>(9)</span></a></li>
+            <li><a href="shop.html?category=royal-mail-pip-boxes">Royal Mail PIP Boxes <span>(5)</span></a></li>
+            <li><a href="shop.html?category=refuse-sacks-2">Refuse Sacks &amp; Bin Bags <span>(3)</span></a></li>
+            <li><a href="shop.html?category=pallet-top-covers">Pallet Top Covers <span>(2)</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main Navigation -->
+      <ul class="main-nav-list">
+        <li><a href="index.html" class="main-nav-link active">HOME</a></li>
+        <li><a href="shop.html" class="main-nav-link">SHOP CATALOG</a></li>
+        <li><a href="shop.html?category=stretch-film" class="main-nav-link">STRETCH FILM</a></li>
+        <li><a href="shop.html?category=mailing-bags" class="main-nav-link">MAILING BAGS</a></li>
+        <li><a href="shop.html?category=tapes" class="main-nav-link">TAPES</a></li>
+        <li><a href="shop.html?category=polythene" class="main-nav-link">POLYTHENE</a></li>
+        <li><a href="about-us.html" class="main-nav-link">ABOUT US</a></li>
+        <li><a href="contact-us.html" class="main-nav-link">TRADE ENQUIRIES</a></li>
+      </ul>
+
+      <!-- Right Side Actions -->
+      <div class="nav-right-actions">
+        <a href="contact-us.html" class="nav-action-link"><i class="far fa-user"></i> LOGIN / REGISTER</a>
+        <span class="nav-divider">|</span>
+        <a href="shop.html" class="nav-action-link"><i class="far fa-heart"></i> WISHLIST <span class="action-count">0</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO SECTION (Trade Focused Redesign) ============ -->
+  <section class="trade-hero-section">
+    <div class="container">
+      <div class="trade-hero-grid">
+        <!-- Left Hero Content -->
+        <div class="trade-hero-left">
+          <div class="hero-badge-pill">
+            <i class="fas fa-shield-halved"></i> Direct UK Manufacturer &amp; Trade Supplier
+          </div>
+          <h1 class="hero-main-title">
+            Commercial Pallet Wraps &amp; <span>Trade Packaging</span> Supplies
+          </h1>
+          <p class="hero-lead-desc">
+            Direct factory wholesale pricing on high-yield stretch films, postage mailers, heavy-duty packing tapes, polythene bags, and postal boxes. Rapid UK nationwide dispatch with tiered pallet savings.
+          </p>
+          <div class="hero-cta-group">
+            <a href="shop.html" class="btn-hero-primary">
+              <i class="fas fa-boxes-stacked"></i> Shop Product Catalog
+            </a>
+            <a href="contact-us.html" class="btn-hero-secondary">
+              <i class="fas fa-file-invoice-dollar"></i> Bulk Trade Enquiries
+            </a>
+          </div>
+          <div class="hero-trust-list">
+            <div class="hero-trust-item"><i class="fas fa-check-circle"></i> Direct Factory Rates</div>
+            <div class="hero-trust-item"><i class="fas fa-check-circle"></i> Next-Day UK Dispatch</div>
+            <div class="hero-trust-item"><i class="fas fa-check-circle"></i> Tiered Pallet Discounts</div>
+            <div class="hero-trust-item"><i class="fas fa-check-circle"></i> 100% Recyclable Options</div>
+          </div>
+        </div>
+
+        <!-- Right Hero Product Showcase -->
+        <div class="trade-hero-right">
+          <div class="hero-showcase-card">
+            <div class="hero-card-badge">Direct Trade Pricing</div>
+            <div class="hero-showcase-media">
+              <img src="images/products/clear-machine-wrap-stretch-film.webp" alt="Clear Machine Wrap Stretch Film" loading="eager">
+            </div>
+            <div class="hero-showcase-meta">
+              <h3>Clear Machine &amp; Hand Stretch Film</h3>
+              <div class="hero-showcase-price-row">
+                <span class="hero-showcase-price">From £12.99</span>
+                <span class="hero-showcase-vat">ex. VAT</span>
+              </div>
+              <div class="hero-spec-pills">
+                <span class="spec-pill">17mu – 30mu</span>
+                <span class="spec-pill">Standard Core</span>
+                <span class="spec-pill">Machine Rolls</span>
+                <span class="spec-pill">250% Stretch</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATEGORY QUICK ICON STRIP (8 Real Categories) ============ -->
+  <section class="category-strip-section">
+    <div class="container">
+      <div class="section-header-wrap">
+        <h2 class="section-main-heading">BROWSE BY CATEGORY</h2>
+        <p class="section-sub-heading">Factory-direct packaging materials engineered for warehouses, logistics, and ecommerce fulfilment</p>
+      </div>
+      <div class="categories-grid" id="categoriesGrid">
+        <!-- Rendered by js/app.min.js with 8 real categories -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BEST SELLING PRODUCTS GRID ============ -->
+  <section class="products-section">
+    <div class="container">
+      <div class="section-header-wrap">
+        <h2 class="section-main-heading">BEST SELLING PACKAGING &amp; PALLET WRAPS</h2>
+        <p class="section-sub-heading">High-demand commercial packaging supplies in stock for immediate parcel or pallet dispatch</p>
+      </div>
+
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="bestseller">Best Sellers</button>
+        <button class="tab-btn" data-tab="stretch-film">Stretch Film</button>
+        <button class="tab-btn" data-tab="mailing-bags">Mailing Bags</button>
+        <button class="tab-btn" data-tab="tapes">Packing Tapes</button>
+        <button class="tab-btn" data-tab="polythene">Polythene &amp; Bags</button>
+        <button class="tab-btn" data-tab="all">All Catalog</button>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- Rendered by js/app.min.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRADE FEATURES VALUE GRID ============ -->
+  <section class="trade-features-section">
+    <div class="container">
+      <div class="trade-features-grid">
+        <div class="trade-feature-card">
+          <div class="trade-feature-icon-wrap"><i class="fas fa-tags"></i></div>
+          <div class="trade-feature-body">
+            <h4>Direct Factory Pricing</h4>
+            <p>Direct manufacturer rates on individual packs, full pallets, and container volumes.</p>
+          </div>
+        </div>
+
+        <div class="trade-feature-card">
+          <div class="trade-feature-icon-wrap"><i class="fas fa-truck-fast"></i></div>
+          <div class="trade-feature-body">
+            <h4>Next-Day UK Dispatch</h4>
+            <p>Fast tracked courier dispatch across the UK. Free shipping on orders over £50 ex. VAT.</p>
+          </div>
+        </div>
+
+        <div class="trade-feature-card">
+          <div class="trade-feature-icon-wrap"><i class="fas fa-shield-halved"></i></div>
+          <div class="trade-feature-body">
+            <h4>Commercial Grade Spec</h4>
+            <p>Engineered for high puncture resistance, superior stretch retention, and load stability.</p>
+          </div>
+        </div>
+
+        <div class="trade-feature-card">
+          <div class="trade-feature-icon-wrap"><i class="fas fa-handshake"></i></div>
+          <div class="trade-feature-body">
+            <h4>Dedicated Trade Support</h4>
+            <p>Custom invoice billing, scheduled deliveries, and dedicated wholesale account specialists.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHOLESALE PALLET ORDER CALLOUT ============ -->
+  <section class="pallet-cta-section">
+    <div class="container">
+      <div class="pallet-cta-box">
+        <div class="pallet-cta-content">
+          <span class="pallet-cta-tag"><i class="fas fa-pallet"></i> Commercial &amp; Wholesale Supply</span>
+          <h3>Need Full Pallets or Contract Packaging Supplies?</h3>
+          <p>We supply UK logistics hubs, fulfillment centers, and manufacturers with direct container and pallet shipments. Contact our sales desk for custom quotes within 2 hours.</p>
+        </div>
+        <div class="pallet-cta-actions">
+          <a href="contact-us.html" class="btn-hero-primary" style="text-align:center; justify-content:center;">
+            <i class="fas fa-file-invoice"></i> Request Trade Quote
+          </a>
+          <a href="tel:02081234567" class="btn-hero-secondary" style="text-align:center; justify-content:center;">
+            <i class="fas fa-phone"></i> Call 020 8123 4567
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER (Standardized 5-Column Grid) ============ -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Office -->
+        <div class="footer-col-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="images/sw-logo.webp" alt="shrinkwraps.co.uk" style="max-width: 210px; display: block; margin-bottom: 16px;">
+          </a>
+          <p style="font-size: 13px; color: #94a3b8; line-height: 1.6; margin-bottom: 8px;">
+            <strong>Registered office address:</strong><br>
+            RAJDHANI UK LIMITED<br>
+            128 City Road, London, United Kingdom, EC1V 2NX
+          </p>
+          <div class="footer-social" style="margin-top: 14px;">
+            <a href="http://fb.com/shrinkwrapsuk" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/shrinkwrapsuk" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@shrinkwraps.co.uk" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: OUR STORES -->
+        <div>
+          <h4 class="footer-title">OUR STORES</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">London</a></li>
+            <li><a href="shop.html">Birmingham</a></li>
+            <li><a href="shop.html">Manchester</a></li>
+            <li><a href="shop.html">Leicester</a></li>
+            <li><a href="shop.html">Glasgow</a></li>
+            <li><a href="shop.html">Leeds</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: USEFUL LINKS -->
+        <div>
+          <h4 class="footer-title">USEFUL LINKS</h4>
+          <ul class="footer-links">
+            <li><a href="terms.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Returns</a></li>
+            <li><a href="about-us.html">Careers</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="blog.html">Latest News</a></li>
+            <li><a href="shop.html">Our Sitemap</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: CATEGORIES -->
+        <div>
+          <h4 class="footer-title">CATEGORIES</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=stretch-film">Stretch Film</a></li>
+            <li><a href="shop.html?category=mailing-bags">Mailing Bags</a></li>
+            <li><a href="shop.html?category=tapes">Tapes</a></li>
+            <li><a href="shop.html?category=polythene">Polythene</a></li>
+            <li><a href="shop.html?category=refuse-sacks-2">Refuse Sacks</a></li>
+            <li><a href="shop.html?category=royal-mail-pip-boxes">Pip Boxes</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: CUSTOMER SERVICE -->
+        <div>
+          <h4 class="footer-title">CUSTOMER SERVICE</h4>
+          <ul class="footer-links">
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="terms.html">Delivery Information</a></li>
+            <li><a href="terms.html">Shipping</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="terms.html">Returns</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bottom-footer" style="padding: 20px 0; border-top: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
+        <p style="font-size: 12px; color: #64748b; margin: 0;">&copy; 2026 shrinkwraps.co.uk - Operated by RAJDHANI UK LIMITED. All Rights Reserved. <!-- VAT NUMBER TO BE CONFIRMED BY CLIENT --> <!-- REGISTRATION NUMBER TO BE CONFIRMED BY CLIENT --></p>
+        <div class="payment-badges" style="display: flex; gap: 12px; font-size: 1.5rem; color: #64748b;">
+          <span><i class="fab fa-cc-visa"></i></span>
+          <span><i class="fab fa-cc-mastercard"></i></span>
+          <span><i class="fab fa-cc-paypal"></i></span>
+          <span><i class="fab fa-cc-amex"></i></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CART DRAWER ============ -->
+  <div class="cart-drawer-backdrop" id="cartDrawerBackdrop"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <h3><i class="fas fa-shopping-basket"></i> Your Shopping Basket</h3>
+      <button class="close-drawer-btn" id="closeCartDrawerBtn">&times;</button>
+    </div>
+    <div class="drawer-body" id="drawerCartItems"></div>
+    <div class="drawer-footer">
+      <div class="drawer-subtotal">
+        <span>Subtotal:</span>
+        <span id="drawerSubtotalAmount">£0.00</span>
+      </div>
+      <div class="drawer-actions">
+        <a href="cart.html" class="btn btn-outline" style="width: 100%; border-color: #cbd5e1; color: #0f172a;">View Cart</a>
+        <a href="checkout.html" class="btn btn-primary" style="width: 100%;">Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/4402081234567" target="_blank" class="floating-whatsapp" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/data.min.js?v=5.0"></script>
+  <script src="js/cart.min.js?v=5.0"></script>
+  <script src="js/app.min.js?v=5.0"></script>
+</body>
+</html>

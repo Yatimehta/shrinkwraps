@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Shop Commercial Packaging &amp; Pallet Wraps - shrinkwraps.co.uk</title>
+  <meta name="description" content="Browse our complete UK trade catalog of industrial stretch film, black pallet wrap, postal mailing bags, Royal Mail PIP boxes, packing tapes, and polythene packaging.">
+  <link rel="icon" href="images/favicon-32x32.png" sizes="32x32">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/styles.min.css?v=5.0">
+  <link rel="stylesheet" href="css/components.min.css?v=5.0">
+  <link rel="stylesheet" href="css/shop.min.css?v=5.0">
+</head>
+<body>
+
+  <!-- ============ TOP ANNOUNCEMENT BAR ============ -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-left">
+        <a href="affiliate.html"><span class="nav-link-text">JOIN THE AFFILIATE PROGRAMME</span></a>
+        <span class="top-bar-divider">|</span>
+        <a href="terms.html"><span class="nav-link-text">TERMS</span></a>
+        <span class="top-bar-divider">|</span>
+        <span class="top-bar-promo"><i class="fas fa-truck-fast"></i> FREE NEXT-DAY SHIPPING ON ORDERS OVER £50 (EX. VAT)</span>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-social">
+          <a href="http://fb.com/shrinkwrapsuk" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/shrinkwrapsuk" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@shrinkwraps.co.uk" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <span class="top-bar-divider">|</span>
+        <a href="mailto:sales@shrinkwraps.co.uk"><i class="fas fa-envelope"></i> sales@shrinkwraps.co.uk</a>
+        <span class="top-bar-divider">|</span>
+        <a href="contact-us.html">CONTACT</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MAIN HEADER ============ -->
+  <header class="main-header">
+    <div class="container header-wrapper">
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation" style="display:none; font-size:22px; background:none; border:none; color:#0f172a; cursor:pointer;">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Site Logo -->
+      <a href="index.html" class="site-logo" aria-label="shrinkwraps.co.uk">
+        <img src="images/sw-logo.webp" alt="shrinkwraps.co.uk" style="max-width:240px; height:auto;">
+      </a>
+
+      <!-- Search Bar -->
+      <div class="header-search">
+        <form class="search-form" onsubmit="event.preventDefault(); applyFilter();">
+          <select class="search-category-select" id="searchCatSelect" onchange="onCategorySelectChange(this.value)" aria-label="Select Category">
+            <option value="all">All Categories</option>
+            <option value="stretch-film">Stretch Film &amp; Pallet Wrap</option>
+            <option value="polythene">Polythene &amp; Grip Bags</option>
+            <option value="tapes">Packing Tapes</option>
+            <option value="paper-products">Paper Products &amp; Labels</option>
+            <option value="mailing-bags">Mailing Bags</option>
+            <option value="royal-mail-pip-boxes">Royal Mail PIP Boxes</option>
+            <option value="refuse-sacks-2">Refuse Sacks</option>
+            <option value="pallet-top-covers">Pallet Top Covers</option>
+          </select>
+          <input type="text" id="shopSearchInput" class="search-input" placeholder="Search stretch films, tapes, mailing bags, boxes..." autocomplete="off">
+          <button type="submit" class="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+
+      <!-- Trade Phone Hotline -->
+      <a href="tel:02081234567" class="header-trade-phone">
+        <i class="fas fa-phone-volume"></i>
+        <div class="header-phone-text">
+          <span class="header-phone-label">Trade Enquiries</span>
+          <span class="header-phone-num">+44 020 8123 4567</span>
+        </div>
+      </a>
+
+      <!-- Cart Widget -->
+      <div class="header-cart-widget" id="openCartDrawerBtn">
+        <span class="cart-icon-wrap">
+          <i class="fas fa-shopping-basket"></i>
+        </span>
+        <span class="cart-text-wrap">
+          <span class="cart-subtotal-line" id="headerCartTotal">£0.00</span>
+          <span class="cart-count-line"><span class="cart-count-badge">0</span> items</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <nav class="nav-bar">
+    <div class="container nav-wrapper">
+      <!-- Browse Categories Dropdown -->
+      <div class="categories-dropdown">
+        <span class="categories-dropdown-btn">
+          <span class="menu-opener-icon"><i class="fas fa-bars"></i></span>
+          <span>BROWSE CATEGORIES</span>
+          <i class="fas fa-chevron-down" style="font-size: 11px; margin-left: auto;"></i>
+        </span>
+        <div class="categories-dropdown-menu">
+          <ul class="categories-vertical-nav">
+            <li><a href="shop.html?category=stretch-film">Stretch Film &amp; Pallet Wrap <span>(37)</span></a></li>
+            <li><a href="shop.html?category=polythene">Polythene &amp; Grip Bags <span>(15)</span></a></li>
+            <li><a href="shop.html?category=tapes">Packing Tapes <span>(15)</span></a></li>
+            <li><a href="shop.html?category=paper-products">Paper Products &amp; Labels <span>(10)</span></a></li>
+            <li><a href="shop.html?category=mailing-bags">Mailing Bags <span>(9)</span></a></li>
+            <li><a href="shop.html?category=royal-mail-pip-boxes">Royal Mail PIP Boxes <span>(5)</span></a></li>
+            <li><a href="shop.html?category=refuse-sacks-2">Refuse Sacks &amp; Bin Bags <span>(3)</span></a></li>
+            <li><a href="shop.html?category=pallet-top-covers">Pallet Top Covers <span>(2)</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main Navigation -->
+      <ul class="main-nav-list">
+        <li><a href="index.html" class="main-nav-link">HOME</a></li>
+        <li><a href="shop.html" class="main-nav-link active">SHOP CATALOG</a></li>
+        <li><a href="shop.html?category=stretch-film" class="main-nav-link">STRETCH FILM</a></li>
+        <li><a href="shop.html?category=mailing-bags" class="main-nav-link">MAILING BAGS</a></li>
+        <li><a href="shop.html?category=tapes" class="main-nav-link">TAPES</a></li>
+        <li><a href="shop.html?category=polythene" class="main-nav-link">POLYTHENE</a></li>
+        <li><a href="about-us.html" class="main-nav-link">ABOUT US</a></li>
+        <li><a href="contact-us.html" class="main-nav-link">TRADE ENQUIRIES</a></li>
+      </ul>
+
+      <!-- Right Side Actions -->
+      <div class="nav-right-actions">
+        <a href="contact-us.html" class="nav-action-link"><i class="far fa-user"></i> LOGIN / REGISTER</a>
+        <span class="nav-divider">|</span>
+        <a href="shop.html" class="nav-action-link"><i class="far fa-heart"></i> WISHLIST <span class="action-count">0</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ PAGE HERO / BREADCRUMB HEADER ============ -->
+  <div class="page-header" style="background: linear-gradient(135deg, #0f3e2e 0%, #165b43 100%); padding: 2.25rem 0; margin-bottom: 2.5rem; border-bottom: 3px solid #10b981;">
+    <div class="container">
+      <h1 id="shopPageTitle" style="color: #ffffff; font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.35rem; letter-spacing: -0.02em;">Product Catalog</h1>
+      <div class="breadcrumbs" style="color: #a7f3d0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+        <a href="index.html" style="color: #a7f3d0; text-decoration: none;">Home</a> / <span id="shopBreadcrumb" style="color: #ffffff; font-weight: 600;">Shop Catalog</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SHOP MAIN CONTENT ============ -->
+  <section style="padding-bottom: 4.5rem;">
+    <div class="container">
+      <div class="shop-layout">
+        
+        <!-- Sidebar Filters -->
+        <aside class="shop-sidebar">
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Categories</h3>
+            <ul class="category-filter-list" id="sidebarCategories">
+              <li><a href="shop.html" class="cat-filter-item active" data-cat="all"><span>All Products</span> <strong>(96)</strong></a></li>
+              <li><a href="shop.html?category=stretch-film" class="cat-filter-item" data-cat="stretch-film"><span>Stretch Film &amp; Pallet Wrap</span> <strong>(37)</strong></a></li>
+              <li><a href="shop.html?category=polythene" class="cat-filter-item" data-cat="polythene"><span>Polythene &amp; Grip Bags</span> <strong>(15)</strong></a></li>
+              <li><a href="shop.html?category=tapes" class="cat-filter-item" data-cat="tapes"><span>Packing Tapes</span> <strong>(15)</strong></a></li>
+              <li><a href="shop.html?category=paper-products" class="cat-filter-item" data-cat="paper-products"><span>Paper Products &amp; Labels</span> <strong>(10)</strong></a></li>
+              <li><a href="shop.html?category=mailing-bags" class="cat-filter-item" data-cat="mailing-bags"><span>Mailing Bags</span> <strong>(9)</strong></a></li>
+              <li><a href="shop.html?category=royal-mail-pip-boxes" class="cat-filter-item" data-cat="royal-mail-pip-boxes"><span>Royal Mail PIP Boxes</span> <strong>(5)</strong></a></li>
+              <li><a href="shop.html?category=refuse-sacks-2" class="cat-filter-item" data-cat="refuse-sacks-2"><span>Refuse Sacks &amp; Bin Bags</span> <strong>(3)</strong></a></li>
+              <li><a href="shop.html?category=pallet-top-covers" class="cat-filter-item" data-cat="pallet-top-covers"><span>Pallet Top Covers</span> <strong>(2)</strong></a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Filter by Price</h3>
+            <div class="price-range-wrapper">
+              <input type="range" id="priceRange" class="price-slider" min="3" max="1550" step="5" value="1550" oninput="document.getElementById('priceMaxVal').textContent = this.value; applyFilter();">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700; color: var(--text-dark);">
+                <span>Min: £3</span>
+                <span>Max: £<span id="priceMaxVal">1550</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-widget" style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 1.25rem; text-align: center;">
+            <i class="fas fa-truck-fast" style="font-size: 1.75rem; color: #165b43; margin-bottom: 0.5rem; display: block;"></i>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: #0f3e2e; margin-bottom: 0.25rem;">Trade Delivery</h4>
+            <p style="font-size: 0.8rem; color: #334155; margin: 0;">Next-day dispatch on UK stock orders placed before 2pm.</p>
+          </div>
+        </aside>
+
+        <!-- Product Grid Area -->
+        <main>
+          <!-- Shop Toolbar -->
+          <div class="shop-toolbar">
+            <span style="font-size: 0.95rem; color: var(--text-medium); font-weight: 500;">
+              Showing <strong id="productResultCount" style="color: var(--primary-forest); font-weight: 800;">0</strong> verified commercial trade products
+            </span>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <label for="sortSelect" style="font-size: 0.85rem; font-weight: 600; color: var(--text-dark);">Sort by:</label>
+              <select id="sortSelect" class="sort-select" onchange="applyFilter();">
+                <option value="default">Default Sorting</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Top Customer Rated</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Catalog Products Grid -->
+          <div class="products-grid" id="catalogProductsGrid">
+            <!-- Dynamic product cards rendered by JavaScript -->
+          </div>
+        </main>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Office -->
+        <div class="footer-col-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="images/sw-logo.webp" alt="shrinkwraps.co.uk" style="max-width: 210px; display: block; margin-bottom: 16px;">
+          </a>
+          <p style="font-size: 13px; color: #94a3b8; line-height: 1.6; margin-bottom: 8px;">
+            <strong>Registered office address:</strong><br>
+            RAJDHANI UK LIMITED<br>
+            128 City Road, London, United Kingdom, EC1V 2NX
+          </p>
+          <div class="footer-social" style="margin-top: 14px;">
+            <a href="http://fb.com/shrinkwrapsuk" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/shrinkwrapsuk" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@shrinkwraps.co.uk" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: OUR STORES -->
+        <div>
+          <h4 class="footer-title">OUR STORES</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">London</a></li>
+            <li><a href="shop.html">Birmingham</a></li>
+            <li><a href="shop.html">Manchester</a></li>
+            <li><a href="shop.html">Leicester</a></li>
+            <li><a href="shop.html">Glasgow</a></li>
+            <li><a href="shop.html">Leeds</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: USEFUL LINKS -->
+        <div>
+          <h4 class="footer-title">USEFUL LINKS</h4>
+          <ul class="footer-links">
+            <li><a href="terms.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Returns</a></li>
+            <li><a href="about-us.html">Careers</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="blog.html">Latest News</a></li>
+            <li><a href="shop.html">Our Sitemap</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: CATEGORIES -->
+        <div>
+          <h4 class="footer-title">CATEGORIES</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=stretch-film">Stretch Film</a></li>
+            <li><a href="shop.html?category=mailing-bags">Mailing Bags</a></li>
+            <li><a href="shop.html?category=tapes">Tapes</a></li>
+            <li><a href="shop.html?category=polythene">Polythene</a></li>
+            <li><a href="shop.html?category=refuse-sacks-2">Refuse Sacks</a></li>
+            <li><a href="shop.html?category=royal-mail-pip-boxes">Pip Boxes</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: CUSTOMER SERVICE -->
+        <div>
+          <h4 class="footer-title">CUSTOMER SERVICE</h4>
+          <ul class="footer-links">
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="terms.html">Delivery Information</a></li>
+            <li><a href="terms.html">Shipping</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="terms.html">Returns</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bottom-footer" style="padding: 20px 0; border-top: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
+        <p style="font-size: 12px; color: #64748b; margin: 0;">&copy; 2026 shrinkwraps.co.uk - Operated by RAJDHANI UK LIMITED. All Rights Reserved. <!-- VAT NUMBER TO BE CONFIRMED BY CLIENT --> <!-- REGISTRATION NUMBER TO BE CONFIRMED BY CLIENT --></p>
+        <div class="payment-badges" style="display: flex; gap: 12px; font-size: 1.5rem; color: #64748b;">
+          <span><i class="fab fa-cc-visa"></i></span>
+          <span><i class="fab fa-cc-mastercard"></i></span>
+          <span><i class="fab fa-cc-paypal"></i></span>
+          <span><i class="fab fa-cc-amex"></i></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CART DRAWER ============ -->
+  <div class="cart-drawer-backdrop" id="cartDrawerBackdrop"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <h3><i class="fas fa-shopping-basket"></i> Your Shopping Basket</h3>
+      <button class="close-drawer-btn" id="closeCartDrawerBtn">&times;</button>
+    </div>
+    <div class="drawer-body" id="drawerCartItems"></div>
+    <div class="drawer-footer">
+      <div class="drawer-subtotal">
+        <span>Subtotal (ex. VAT):</span>
+        <span id="drawerSubtotalAmount">£0.00</span>
+      </div>
+      <div class="drawer-actions">
+        <a href="cart.html" class="btn btn-outline" style="width: 100%; border-color: #cbd5e1; color: #0f172a;">View Basket</a>
+        <a href="checkout.html" class="btn btn-primary" style="width: 100%;">Proceed to Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/4402081234567" target="_blank" class="floating-whatsapp" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="js/data.min.js?v=5.0"></script>
+  <script src="js/cart.min.js?v=5.0"></script>
+  <script src="js/app.min.js?v=5.0"></script>
+  <script>
+    function normalizeCategory(cat) {
+      if (!cat) return 'all';
+      if (cat === 'refuse-sacks') return 'refuse-sacks-2';
+      if (cat === 'pallet-top-cover') return 'pallet-top-covers';
+      return cat;
+    }
+
+    function onCategorySelectChange(val) {
+      if (val === 'all' || val === '0') {
+        history.pushState(null, '', 'shop.html');
+      } else {
+        history.pushState(null, '', 'shop.html?category=' + val);
+      }
+      syncSidebarCategory(val);
+      applyFilter();
+    }
+
+    function syncSidebarCategory(cat) {
+      document.querySelectorAll('.cat-filter-item').forEach(item => {
+        if (item.getAttribute('data-cat') === cat || (!cat && item.getAttribute('data-cat') === 'all')) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+      const searchCatEl = document.getElementById('searchCatSelect');
+      if (searchCatEl) searchCatEl.value = (cat && cat !== 'all') ? cat : 'all';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const rawCat = urlParams.get('category');
+      const catParam = normalizeCategory(rawCat);
+      const searchParam = urlParams.get('search') || urlParams.get('q');
+
+      syncSidebarCategory(catParam);
+
+      if (searchParam) {
+        document.getElementById('shopSearchInput').value = searchParam;
+      }
+
+      const searchInputEl = document.getElementById('shopSearchInput');
+      if (searchInputEl) {
+        searchInputEl.addEventListener('input', applyFilter);
+      }
+
+      applyFilter();
+    });
+
+    function applyFilter() {
+      if (typeof PRODUCTS_DATA === 'undefined') return;
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const rawCat = urlParams.get('category');
+      const selectedCat = normalizeCategory(rawCat);
+      const searchVal = (document.getElementById('shopSearchInput').value || '').toLowerCase().trim();
+      const maxPrice = parseFloat(document.getElementById('priceRange').value) || 1550;
+      const sortBy = document.getElementById('sortSelect').value;
+
+      let list = [...PRODUCTS_DATA];
+
+      // Filter category
+      if (selectedCat !== 'all') {
+        list = list.filter(p => p.category === selectedCat);
+        const catObj = (typeof CATEGORIES !== 'undefined') ? CATEGORIES.find(c => c.id === selectedCat) : null;
+        if (catObj) {
+          document.getElementById('shopPageTitle').textContent = catObj.name;
+          document.getElementById('shopBreadcrumb').textContent = catObj.name;
+        }
+      } else {
+        document.getElementById('shopPageTitle').textContent = 'Product Catalog';
+        document.getElementById('shopBreadcrumb').textContent = 'Shop Catalog';
+      }
+
+      // Filter Search
+      if (searchVal) {
+        list = list.filter(p => p.name.toLowerCase().includes(searchVal) || (p.description && p.description.toLowerCase().includes(searchVal)) || (p.sku && p.sku.toLowerCase().includes(searchVal)));
+      }
+
+      // Filter Price
+      list = list.filter(p => {
+        const itemPrice = p.basePrice || p.price || 0;
+        return itemPrice <= maxPrice;
+      });
+
+      // Sort
+      if (sortBy === 'price-low') {
+        list.sort((a, b) => (a.basePrice || a.price) - (b.basePrice || b.price));
+      } else if (sortBy === 'price-high') {
+        list.sort((a, b) => (b.basePrice || b.price) - (a.basePrice || a.price));
+      } else if (sortBy === 'rating') {
+        list.sort((a, b) => (b.rating || 5) - (a.rating || 5));
+      }
+
+      document.getElementById('productResultCount').textContent = list.length;
+      const grid = document.getElementById('catalogProductsGrid');
+
+      if (list.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 4rem 1rem; background: #ffffff; border-radius: 12px; border: 1px dashed #cbd5e1;">
+            <i class="fas fa-search" style="font-size: 3rem; color: #94a3b8; margin-bottom: 1rem; display: block;"></i>
+            <h3 style="font-family: var(--font-heading); color: #0f172a; margin-bottom: 0.5rem;">No products match your filter</h3>
+            <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 1.5rem;">Try resetting your price slider or search keyword to view full catalog.</p>
+            <a href="shop.html" class="btn btn-primary btn-sm" style="display: inline-flex; align-items: center; gap: 6px;"><i class="fas fa-rotate-left"></i> Reset All Filters</a>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = list.map(p => `
+        <div class="product-card">
+          ${p.badge ? `<div class="pill-badge pill-badge-${p.badge.toLowerCase()}"><span class="badge-dot"></span>${p.badge}</div>` : `<div class="pill-badge pill-badge-trade"><span class="badge-dot"></span>TRADE PRICE</div>`}
+          <div class="product-thumb">
+            <a href="product-detail.html?id=${p.id}">
+              <img src="${p.image}" alt="${p.name}" loading="lazy">
+            </a>
+          </div>
+          <div class="product-details">
+            <span class="product-cat">${(p.category || '').replace(/-/g, ' ')}</span>
+            <h3 class="product-title">
+              <a href="product-detail.html?id=${p.id}">${p.name}</a>
+            </h3>
+            <div class="product-rating">
+              ${'<i class="fas fa-star"></i>'.repeat(Math.floor(p.rating || 5))}
+              <span class="rating-count">(${p.reviewsCount || 32})</span>
+            </div>
+            ${p.hasVariations ? `<div class="options-count-tag"><i class="fas fa-sliders"></i> ${p.variations.length} Options Available</div>` : ''}
+            <div class="product-bottom">
+              <div class="product-price">
+                <span class="price-current">${getProductPriceDisplay(p)}</span>
+                <span class="price-vat-label">ex. VAT</span>
+              </div>
+              ${p.hasVariations ? `
+                <a href="product-detail.html?id=${p.id}" class="select-options-btn">
+                  <span>Options</span> <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i>
+                </a>
+              ` : `
+                <button class="add-cart-btn" onclick="cartManager.addItem('${p.id}')" title="Add to Basket">
+                  <i class="fas fa-shopping-bag"></i>
+                </button>
+              `}
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+</html>

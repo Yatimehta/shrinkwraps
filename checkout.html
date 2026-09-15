@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Commercial Checkout - shrinkwraps.co.uk</title>
+  <meta name="description" content="Secure trade checkout for UK business packaging orders with automated 20% VAT invoices and next-day warehouse dispatch.">
+  <link rel="icon" href="images/favicon-32x32.png" sizes="32x32">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/styles.min.css?v=5.0">
+  <link rel="stylesheet" href="css/components.min.css?v=5.0">
+  <link rel="stylesheet" href="css/shop.min.css?v=5.0">
+</head>
+<body>
+
+  <!-- ============ TOP ANNOUNCEMENT BAR ============ -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-left">
+        <a href="affiliate.html"><span class="nav-link-text">JOIN THE AFFILIATE PROGRAMME</span></a>
+        <span class="top-bar-divider">|</span>
+        <a href="terms.html"><span class="nav-link-text">TERMS</span></a>
+        <span class="top-bar-divider">|</span>
+        <span class="top-bar-promo"><i class="fas fa-lock"></i> 256-BIT SSL ENCRYPTED SECURE TRADE CHECKOUT</span>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-social">
+          <a href="http://fb.com/shrinkwrapsuk" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/shrinkwrapsuk" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@shrinkwraps.co.uk" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <span class="top-bar-divider">|</span>
+        <a href="mailto:sales@shrinkwraps.co.uk"><i class="fas fa-envelope"></i> sales@shrinkwraps.co.uk</a>
+        <span class="top-bar-divider">|</span>
+        <a href="contact-us.html">CONTACT</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MAIN HEADER ============ -->
+  <header class="main-header">
+    <div class="container header-wrapper">
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation" style="display:none; font-size:22px; background:none; border:none; color:#0f172a; cursor:pointer;">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Site Logo -->
+      <a href="index.html" class="site-logo" aria-label="shrinkwraps.co.uk">
+        <img src="images/sw-logo.webp" alt="shrinkwraps.co.uk" style="max-width:240px; height:auto;">
+      </a>
+
+      <!-- Search Bar -->
+      <div class="header-search">
+        <form class="search-form" onsubmit="event.preventDefault(); const q = document.getElementById('headerSearchInput').value; location.href='shop.html?search=' + encodeURIComponent(q);">
+          <select class="search-category-select" id="searchCatSelect" onchange="location.href='shop.html?category=' + this.value" aria-label="Select Category">
+            <option value="all">All Categories</option>
+            <option value="stretch-film">Stretch Film &amp; Pallet Wrap</option>
+            <option value="polythene">Polythene &amp; Grip Bags</option>
+            <option value="tapes">Packing Tapes</option>
+            <option value="paper-products">Paper Products &amp; Labels</option>
+            <option value="mailing-bags">Mailing Bags</option>
+            <option value="royal-mail-pip-boxes">Royal Mail PIP Boxes</option>
+            <option value="refuse-sacks-2">Refuse Sacks</option>
+            <option value="pallet-top-covers">Pallet Top Covers</option>
+          </select>
+          <input type="text" id="headerSearchInput" class="search-input" placeholder="Search stretch films, tapes, mailing bags, boxes..." autocomplete="off">
+          <button type="submit" class="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+
+      <!-- Trade Phone Hotline -->
+      <a href="tel:02081234567" class="header-trade-phone">
+        <i class="fas fa-phone-volume"></i>
+        <div class="header-phone-text">
+          <span class="header-phone-label">Trade Enquiries</span>
+          <span class="header-phone-num">+44 020 8123 4567</span>
+        </div>
+      </a>
+
+      <!-- Cart Widget -->
+      <div class="header-cart-widget" id="openCartDrawerBtn">
+        <span class="cart-icon-wrap">
+          <i class="fas fa-shopping-basket"></i>
+        </span>
+        <span class="cart-text-wrap">
+          <span class="cart-subtotal-line" id="headerCartTotal">£0.00</span>
+          <span class="cart-count-line"><span class="cart-count-badge">0</span> items</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <nav class="nav-bar">
+    <div class="container nav-wrapper">
+      <div class="categories-dropdown">
+        <span class="categories-dropdown-btn">
+          <span class="menu-opener-icon"><i class="fas fa-bars"></i></span>
+          <span>BROWSE CATEGORIES</span>
+          <i class="fas fa-chevron-down" style="font-size: 11px; margin-left: auto;"></i>
+        </span>
+        <div class="categories-dropdown-menu">
+          <ul class="categories-vertical-nav">
+            <li><a href="shop.html?category=stretch-film">Stretch Film &amp; Pallet Wrap <span>(37)</span></a></li>
+            <li><a href="shop.html?category=polythene">Polythene &amp; Grip Bags <span>(15)</span></a></li>
+            <li><a href="shop.html?category=tapes">Packing Tapes <span>(15)</span></a></li>
+            <li><a href="shop.html?category=paper-products">Paper Products &amp; Labels <span>(10)</span></a></li>
+            <li><a href="shop.html?category=mailing-bags">Mailing Bags <span>(9)</span></a></li>
+            <li><a href="shop.html?category=royal-mail-pip-boxes">Royal Mail PIP Boxes <span>(5)</span></a></li>
+            <li><a href="shop.html?category=refuse-sacks-2">Refuse Sacks &amp; Bin Bags <span>(3)</span></a></li>
+            <li><a href="shop.html?category=pallet-top-covers">Pallet Top Covers <span>(2)</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main Navigation -->
+      <ul class="main-nav-list">
+        <li><a href="index.html" class="main-nav-link">HOME</a></li>
+        <li><a href="shop.html" class="main-nav-link">SHOP CATALOG</a></li>
+        <li><a href="shop.html?category=stretch-film" class="main-nav-link">STRETCH FILM</a></li>
+        <li><a href="shop.html?category=mailing-bags" class="main-nav-link">MAILING BAGS</a></li>
+        <li><a href="shop.html?category=tapes" class="main-nav-link">TAPES</a></li>
+        <li><a href="shop.html?category=polythene" class="main-nav-link">POLYTHENE</a></li>
+        <li><a href="about-us.html" class="main-nav-link">ABOUT US</a></li>
+        <li><a href="contact-us.html" class="main-nav-link">TRADE ENQUIRIES</a></li>
+      </ul>
+
+      <!-- Right Side Actions -->
+      <div class="nav-right-actions">
+        <a href="contact-us.html" class="nav-action-link"><i class="far fa-user"></i> LOGIN / REGISTER</a>
+        <span class="nav-divider">|</span>
+        <a href="shop.html" class="nav-action-link"><i class="far fa-heart"></i> WISHLIST <span class="action-count">0</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ PAGE HERO / BREADCRUMB HEADER ============ -->
+  <div class="page-header" style="background: linear-gradient(135deg, #0f3e2e 0%, #165b43 100%); padding: 2.25rem 0; margin-bottom: 2.5rem; border-bottom: 3px solid #10b981;">
+    <div class="container">
+      <h1 style="color: #ffffff; font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem;">Commercial Trade Checkout</h1>
+      <div class="breadcrumbs" style="color: #a7f3d0; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+        <a href="index.html" style="color: #a7f3d0; text-decoration: none;">Home</a> / <a href="cart.html" style="color: #a7f3d0; text-decoration: none;">Shopping Basket</a> / <span style="color: #ffffff; font-weight: 700;">Checkout</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CHECKOUT CONTENT ============ -->
+  <section style="padding-bottom: 5rem; background: #f8fafc;">
+    <div class="container">
+      <form id="checkoutForm" onsubmit="handleCheckoutSubmit(event)">
+        <div class="checkout-grid">
+          
+          <!-- Billing / Shipping Details -->
+          <div style="background: #ffffff; padding: 2.25rem; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 14px rgba(15,62,46,0.04);">
+            <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 1.5rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.75rem;">
+              <i class="fas fa-truck" style="color: #165b43; margin-right: 8px;"></i> Delivery &amp; Billing Address
+            </h3>
+
+            <div class="form-row-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+              <div class="form-group">
+                <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">First Name *</label>
+                <input type="text" class="form-control" required placeholder="John" style="width: 100%; height: 44px; padding: 0 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit;">
+              </div>
+              <div class="form-group">
+                <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Last Name *</label>
+                <input type="text" class="form-control" required placeholder="Smith" style="width: 100%; height: 44px; padding: 0 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit;">
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Company Name &amp; VAT Number (Optional)</label>
+              <input type="text" class="form-control" placeholder="Acme Logistics Ltd (GB 123 4567 89)" style="width: 100%; height: 44px; padding: 0 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit;">
+            </div>
+
+            <div class="form-row-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+              <div class="form-group">
+                <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Email Address *</label>
+                <input type="email" class="form-control" required placeholder="orders@company.co.uk" style="width: 100%; height: 44px; padding: 0 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit;">
+              </div>
+              <div class="form-group">
+                <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Phone Number *</label>
+                <input type="tel" class="form-control" required placeholder="020 8123 4567" style="width: 100%; height: 44px; padding: 0 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit;">
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Street Address *</label>
+              <input type="text" class="form-control" required placeholder="Unit 4, Gateway Industrial Estate, Commercial Road" style="width: 100%; height: 44px; padding: 0 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit;">
+            </div>
+
+            <div class="form-row-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+              <div class="form-group">
+                <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Town / City *</label>
+                <input type="text" class="form-control" required placeholder="London" style="width: 100%; height: 44px; padding: 0 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit;">
+              </div>
+              <div class="form-group">
+                <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Postcode *</label>
+                <input type="text" class="form-control" required placeholder="EC1V 2NX" style="width: 100%; height: 44px; padding: 0 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit;">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Delivery Instructions / Warehouse Notes (Optional)</label>
+              <textarea class="form-control" rows="2" placeholder="Forklift on-site / Tail lift required / Goods inward bay 3" style="width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; resize: vertical;"></textarea>
+            </div>
+          </div>
+
+          <!-- Order Summary & Payment -->
+          <div style="background: #ffffff; padding: 2.25rem; border-radius: 12px; border: 1px solid #e2e8f0; height: fit-content; box-shadow: 0 4px 20px rgba(15,62,46,0.06);">
+            <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 1.25rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.75rem;">
+              <i class="fas fa-clipboard-check" style="color: #165b43; margin-right: 8px;"></i> Order Summary
+            </h3>
+            
+            <div id="checkoutOrderItems" style="margin-bottom: 1.25rem; max-height: 280px; overflow-y: auto; padding-right: 0.5rem;">
+              <!-- Items populated dynamically -->
+            </div>
+
+            <div style="border-top: 1px solid #e2e8f0; padding-top: 1rem; margin-bottom: 1.5rem;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.6rem; color: #64748b;">
+                <span>Subtotal (ex. VAT):</span>
+                <span id="checkoutSubtotalVal" style="color: #0f172a; font-weight: 700;">£0.00</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.6rem; color: #64748b;">
+                <span>VAT (20% UK Standard):</span>
+                <span id="checkoutVatVal" style="color: #0f172a; font-weight: 700;">£0.00</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 1rem; color: #64748b;">
+                <span>Delivery:</span>
+                <span style="color: #10b981; font-weight: 700;"><i class="fas fa-truck-fast"></i> FREE (UK Mainland)</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-weight: 800; font-family: var(--font-heading); font-size: 1.4rem; color: #0f172a; border-top: 2px solid #e2e8f0; padding-top: 0.85rem;">
+                <span>Total Amount:</span>
+                <span id="checkoutTotalVal" style="color: #165b43;">£0.00</span>
+              </div>
+            </div>
+
+            <h4 style="margin-bottom: 0.85rem; font-family: var(--font-heading); font-size: 1.1rem; color: #0f172a; font-weight: 700;">Payment Method</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.75rem;">
+              <label style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.925rem; cursor: pointer; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 8px; background: #f8fafc; font-weight: 600; color: #0f172a;">
+                <input type="radio" name="paymentMethod" value="card" checked style="accent-color: #165b43; width: 16px; height: 16px;"> 
+                <span><i class="fas fa-credit-card" style="color: #165b43; margin-right: 6px;"></i> Credit / Debit Card (Stripe UK Secure)</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.925rem; cursor: pointer; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 8px; font-weight: 600; color: #0f172a;">
+                <input type="radio" name="paymentMethod" value="paypal" style="accent-color: #165b43; width: 16px; height: 16px;"> 
+                <span><i class="fab fa-paypal" style="color: #0070ba; margin-right: 6px;"></i> PayPal Express Checkout</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.925rem; cursor: pointer; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 8px; font-weight: 600; color: #0f172a;">
+                <input type="radio" name="paymentMethod" value="bacs" style="accent-color: #165b43; width: 16px; height: 16px;"> 
+                <span><i class="fas fa-building-columns" style="color: #475569; margin-right: 6px;"></i> Direct Bank Transfer / 30-Day Trade Invoice</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; height: 52px; font-size: 1.05rem; font-weight: 800; letter-spacing: 0.02em; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;">
+              <i class="fas fa-lock"></i> PLACE ORDER NOW
+            </button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Office -->
+        <div class="footer-col-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="images/sw-logo.webp" alt="shrinkwraps.co.uk" style="max-width: 210px; display: block; margin-bottom: 16px;">
+          </a>
+          <p style="font-size: 13px; color: #94a3b8; line-height: 1.6; margin-bottom: 8px;">
+            <strong>Registered office address:</strong><br>
+            RAJDHANI UK LIMITED<br>
+            128 City Road, London, United Kingdom, EC1V 2NX
+          </p>
+          <div class="footer-social" style="margin-top: 14px;">
+            <a href="http://fb.com/shrinkwrapsuk" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/shrinkwrapsuk" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@shrinkwraps.co.uk" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: OUR STORES -->
+        <div>
+          <h4 class="footer-title">OUR STORES</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">London</a></li>
+            <li><a href="shop.html">Birmingham</a></li>
+            <li><a href="shop.html">Manchester</a></li>
+            <li><a href="shop.html">Leicester</a></li>
+            <li><a href="shop.html">Glasgow</a></li>
+            <li><a href="shop.html">Leeds</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: USEFUL LINKS -->
+        <div>
+          <h4 class="footer-title">USEFUL LINKS</h4>
+          <ul class="footer-links">
+            <li><a href="terms.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Returns</a></li>
+            <li><a href="about-us.html">Careers</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="blog.html">Latest News</a></li>
+            <li><a href="shop.html">Our Sitemap</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: CATEGORIES -->
+        <div>
+          <h4 class="footer-title">CATEGORIES</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=stretch-film">Stretch Film</a></li>
+            <li><a href="shop.html?category=mailing-bags">Mailing Bags</a></li>
+            <li><a href="shop.html?category=tapes">Tapes</a></li>
+            <li><a href="shop.html?category=polythene">Polythene</a></li>
+            <li><a href="shop.html?category=refuse-sacks-2">Refuse Sacks</a></li>
+            <li><a href="shop.html?category=royal-mail-pip-boxes">Pip Boxes</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: CUSTOMER SERVICE -->
+        <div>
+          <h4 class="footer-title">CUSTOMER SERVICE</h4>
+          <ul class="footer-links">
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="terms.html">Delivery Information</a></li>
+            <li><a href="terms.html">Shipping</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="terms.html">Returns</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bottom-footer" style="padding: 20px 0; border-top: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
+        <p style="font-size: 12px; color: #64748b; margin: 0;">&copy; 2026 shrinkwraps.co.uk - Operated by RAJDHANI UK LIMITED. All Rights Reserved. <!-- VAT NUMBER TO BE CONFIRMED BY CLIENT --> <!-- REGISTRATION NUMBER TO BE CONFIRMED BY CLIENT --></p>
+        <div class="payment-badges" style="display: flex; gap: 12px; font-size: 1.5rem; color: #64748b;">
+          <span><i class="fab fa-cc-visa"></i></span>
+          <span><i class="fab fa-cc-mastercard"></i></span>
+          <span><i class="fab fa-cc-paypal"></i></span>
+          <span><i class="fab fa-cc-amex"></i></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CART DRAWER ============ -->
+  <div class="cart-drawer-backdrop" id="cartDrawerBackdrop"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <h3><i class="fas fa-shopping-basket"></i> Your Shopping Basket</h3>
+      <button class="close-drawer-btn" id="closeCartDrawerBtn">&times;</button>
+    </div>
+    <div class="drawer-body" id="drawerCartItems"></div>
+    <div class="drawer-footer">
+      <div class="drawer-subtotal">
+        <span>Subtotal:</span>
+        <span id="drawerSubtotalAmount">£0.00</span>
+      </div>
+      <div class="drawer-actions">
+        <a href="cart.html" class="btn btn-outline" style="width: 100%; border-color: #cbd5e1; color: #0f172a;">View Cart</a>
+        <a href="checkout.html" class="btn btn-primary" style="width: 100%;">Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/4402081234567" target="_blank" class="floating-whatsapp" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="js/data.min.js?v=5.0"></script>
+  <script src="js/cart.min.js?v=5.0"></script>
+  <script src="js/app.min.js?v=5.0"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const itemsContainer = document.getElementById('checkoutOrderItems');
+      const items = cartManager.cart;
+
+      if (!items.length) {
+        itemsContainer.innerHTML = '<p style="color: #64748b; font-size: 0.9rem; padding: 1rem 0;">Your basket is empty. <a href="shop.html" style="color: #165b43; font-weight: 700;">Return to shop</a></p>';
+        return;
+      }
+
+      itemsContainer.innerHTML = items.map(item => `
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px dashed #f1f5f9;">
+          <div style="padding-right: 1rem; display: flex; align-items: center; gap: 10px;">
+            <img src="${item.image}" alt="${item.name}" style="width: 44px; height: 44px; object-fit: cover; border-radius: 6px; border: 1px solid #e2e8f0; flex-shrink: 0;">
+            <div>
+              <div style="font-weight: 700; color: #0f172a; line-height: 1.3;">${item.name}</div>
+              ${item.variationText ? `<div style="font-size: 0.75rem; color: #165b43; margin-top: 2px;"><i class="fas fa-layer-group" style="font-size: 0.65rem;"></i> ${item.variationText}</div>` : ''}
+              <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 2px;">Qty: ${item.qty} × £${item.price.toFixed(2)}</div>
+            </div>
+          </div>
+          <span style="font-weight: 700; color: #0f172a; font-family: var(--font-heading);">£${(item.price * item.qty).toFixed(2)}</span>
+        </div>
+      `).join('');
+
+      const sub = cartManager.getSubtotal();
+      const vat = sub * 0.20;
+      const total = sub + vat;
+
+      document.getElementById('checkoutSubtotalVal').textContent = `£${sub.toFixed(2)}`;
+      document.getElementById('checkoutVatVal').textContent = `£${vat.toFixed(2)}`;
+      document.getElementById('checkoutTotalVal').textContent = `£${total.toFixed(2)}`;
+    });
+
+    function handleCheckoutSubmit(e) {
+      e.preventDefault();
+      const orderNum = 'SW-' + Math.floor(100000 + Math.random() * 900000);
+      const email = document.querySelector('input[type="email"]').value;
+      const formSection = document.getElementById('checkoutForm');
+      
+      formSection.innerHTML = `
+        <div style="max-width: 650px; margin: 0 auto; background: #ffffff; padding: 3.5rem 2rem; border-radius: 14px; border: 1px solid #e2e8f0; text-align: center; box-shadow: 0 10px 35px rgba(15,62,46,0.08);">
+          <div style="width: 75px; height: 75px; background: #ecfdf5; color: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.25rem; margin: 0 auto 1.5rem;">
+            <i class="fas fa-check"></i>
+          </div>
+          <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 0.5rem; color: #0f172a; font-weight: 800;">Order Placed Successfully!</h2>
+          <p style="color: #64748b; font-size: 1rem; margin-bottom: 2rem;">Thank you for your order. A confirmation email with full VAT invoice has been sent to <strong>${email}</strong>.</p>
+          
+          <div style="background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 1.5rem; margin-bottom: 2.5rem; text-align: left;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.6rem; font-size: 0.95rem;">
+              <span style="color: #64748b;">Order Reference:</span>
+              <strong style="color: #0f172a; font-family: var(--font-heading);">#${orderNum}</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.6rem; font-size: 0.95rem;">
+              <span style="color: #64748b;">Estimated Dispatch:</span>
+              <strong style="color: #10b981;">Today (Dispatched by 2:00 PM)</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.95rem;">
+              <span style="color: #64748b;">Payment Status:</span>
+              <strong style="color: #0f172a;">Confirmed</strong>
+            </div>
+          </div>
+
+          <a href="shop.html" class="btn btn-primary" style="padding: 14px 36px; font-weight: 800; font-family: var(--font-heading); border-radius: 8px;">Continue Shopping</a>
+        </div>
+      `;
+      
+      localStorage.removeItem('shrinkwraps_cart');
+      if (typeof cartManager !== 'undefined') {
+        cartManager.cart = [];
+        cartManager.updateUI();
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

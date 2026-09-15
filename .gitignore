@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Production / Deployment
+.vercel/
+.vercel
+
+# Archives & Backups
+*.zip
+*.tar.gz
+*.rar
+shrinkwraps_site.zip
+
+# OS & Editor Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+venv/
+ENV/
+
+# Temporary / Migration Scripts & Dumps
+scrape_*.py
+download_and_convert.py
+create_mapping.js
+stocksupplies_catalog.json
+product_image_mapping.json
