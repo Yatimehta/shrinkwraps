@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   renderCategoriesGrid();
   renderProductsGrid('bestseller');
+  renderHomepageFeaturedContainers();
   initTabsNav();
   initLiveSearch();
   initScrollTop();
@@ -28,6 +29,50 @@ function getProductPriceDisplay(p) {
   }
   const base = p.basePrice || p.price || 0;
   return `£${Number(base).toFixed(2)}`;
+}
+
+/* Product Card HTML Generator */
+function createProductCardHTML(p) {
+  const priceDisplay = getProductPriceDisplay(p);
+  const badgeClass = p.badge ? `pill-badge pill-badge-${p.badge.toLowerCase().replace(/[^a-z0-9]/g, '')}` : '';
+  const starsCount = Math.min(5, Math.max(1, Math.floor(p.rating || 5)));
+  
+  return `
+    <div class="product-card">
+      ${p.badge ? `<div class="${badgeClass}"><span class="badge-dot"></span>${p.badge}</div>` : ''}
+      <div class="product-thumb">
+        <a href="product-detail.html?id=${p.id}">
+          <img src="${p.image}" alt="${p.name}" loading="lazy">
+        </a>
+      </div>
+      <div class="product-details">
+        <span class="product-cat">${(p.category || '').replace(/-/g, ' ')}</span>
+        <h3 class="product-title">
+          <a href="product-detail.html?id=${p.id}">${p.name}</a>
+        </h3>
+        <div class="product-rating">
+          ${'<i class="fas fa-star"></i>'.repeat(starsCount)}
+          <span class="rating-count">(${p.reviewsCount || 16})</span>
+        </div>
+        ${p.hasVariations && p.variations ? `<div class="options-count-tag"><i class="fas fa-sliders"></i> ${p.variations.length} Options Available</div>` : ''}
+        <div class="product-bottom">
+          <div class="product-price">
+            <span class="price-current">${priceDisplay}</span>
+            <span class="price-vat-label">ex. VAT</span>
+          </div>
+          ${p.hasVariations ? `
+            <a href="product-detail.html?id=${p.id}" class="select-options-btn">
+              <span>Options</span> <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i>
+            </a>
+          ` : `
+            <button class="add-cart-btn" onclick="cartManager.addItem('${p.id}')" title="Add to Basket">
+              <i class="fas fa-shopping-bag"></i>
+            </button>
+          `}
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 /* Render Homepage 8 Real Categories */
@@ -68,45 +113,42 @@ function renderProductsGrid(tabFilter = 'bestseller') {
     filteredProducts = PRODUCTS_DATA.filter(p => p.tab === tabFilter);
   }
 
-  // Cap at 12 items for clean visual balance
-  const displayItems = filteredProducts.slice(0, 12);
+  // Cap at 8-12 items for clean visual balance
+  const displayItems = filteredProducts.slice(0, 8);
+  container.innerHTML = displayItems.map(p => createProductCardHTML(p)).join('');
+}
 
-  container.innerHTML = displayItems.map(p => `
-    <div class="product-card">
-      ${p.badge ? `<div class="pill-badge pill-badge-${p.badge.toLowerCase()}"><span class="badge-dot"></span>${p.badge}</div>` : ''}
-      <div class="product-thumb">
-        <a href="product-detail.html?id=${p.id}">
-          <img src="${p.image}" alt="${p.name}" loading="lazy">
-        </a>
-      </div>
-      <div class="product-details">
-        <span class="product-cat">${(p.category || '').replace(/-/g, ' ')}</span>
-        <h3 class="product-title">
-          <a href="product-detail.html?id=${p.id}">${p.name}</a>
-        </h3>
-        <div class="product-rating">
-          ${'<i class="fas fa-star"></i>'.repeat(Math.floor(p.rating || 5))}
-          <span class="rating-count">(${p.reviewsCount || 12})</span>
-        </div>
-        ${p.hasVariations ? `<div class="options-count-tag"><i class="fas fa-sliders"></i> ${p.variations.length} Options Available</div>` : ''}
-        <div class="product-bottom">
-          <div class="product-price">
-            <span class="price-current">${getProductPriceDisplay(p)}</span>
-            <span class="price-vat-label">ex. VAT</span>
-          </div>
-          ${p.hasVariations ? `
-            <a href="product-detail.html?id=${p.id}" class="select-options-btn">
-              <span>Options</span> <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i>
-            </a>
-          ` : `
-            <button class="add-cart-btn" onclick="cartManager.addItem('${p.id}')" title="Add to Basket">
-              <i class="fas fa-shopping-bag"></i>
-            </button>
-          `}
-        </div>
-      </div>
-    </div>
-  `).join('');
+/* Render Additional Homepage Featured Product Containers */
+function renderHomepageFeaturedContainers() {
+  if (typeof PRODUCTS_DATA === 'undefined') return;
+
+  // 1. Heavy-Duty Industrial Stretch Film & Pallet Wrap Container
+  const stretchContainer = document.getElementById('stretchFilmGrid');
+  if (stretchContainer) {
+    const stretchItems = PRODUCTS_DATA.filter(p => p.category === 'stretch-film').slice(0, 8);
+    stretchContainer.innerHTML = stretchItems.map(p => createProductCardHTML(p)).join('');
+  }
+
+  // 2. Postal & Ecommerce Shipping Supplies (Mailing Bags & PIP Boxes)
+  const postalContainer = document.getElementById('postalPackagingGrid');
+  if (postalContainer) {
+    const postalItems = PRODUCTS_DATA.filter(p => p.category === 'mailing-bags' || p.category === 'royal-mail-pip-boxes').slice(0, 8);
+    postalContainer.innerHTML = postalItems.map(p => createProductCardHTML(p)).join('');
+  }
+
+  // 3. Commercial Packing Tapes & Adhesives
+  const tapesContainer = document.getElementById('tapesGrid');
+  if (tapesContainer) {
+    const tapesItems = PRODUCTS_DATA.filter(p => p.category === 'tapes').slice(0, 8);
+    tapesContainer.innerHTML = tapesItems.map(p => createProductCardHTML(p)).join('');
+  }
+
+  // 4. Polythene Packaging, Grip Bags & Heavy Duty Sacks
+  const polytheneContainer = document.getElementById('polytheneGrid');
+  if (polytheneContainer) {
+    const polyItems = PRODUCTS_DATA.filter(p => p.category === 'polythene' || p.category === 'refuse-sacks-2' || p.category === 'paper-products' || p.category === 'pallet-top-covers').slice(0, 8);
+    polytheneContainer.innerHTML = polyItems.map(p => createProductCardHTML(p)).join('');
+  }
 }
 
 /* Product Filter Tabs */

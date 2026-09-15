@@ -12,8 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <link rel="stylesheet" href="css/styles.min.css?v=3.1">
-  <link rel="stylesheet" href="css/components.min.css?v=3.1">
+  <link rel="stylesheet" href="css/styles.min.css?v=5.0">
+  <link rel="stylesheet" href="css/components.min.css?v=5.0">
 </head>
 <body>
 
@@ -56,9 +56,9 @@
 
       <!-- Search Bar -->
       <div class="header-search">
-        <form class="search-form" onsubmit="event.preventDefault(); const cat = document.getElementById('searchCatSelect').value; const q = document.getElementById('headerSearchInput').value; location.href='shop.html?' + (cat !== '0' ? 'category=' + cat + '&' : '') + 'search=' + encodeURIComponent(q);">
+        <form class="search-form" onsubmit="event.preventDefault(); const cat = document.getElementById('searchCatSelect').value; const q = document.getElementById('headerSearchInput').value; location.href='shop.html?' + (cat !== 'all' && cat !== '0' ? 'category=' + cat + '&' : '') + 'search=' + encodeURIComponent(q);">
           <select class="search-category-select" id="searchCatSelect" aria-label="Select Category">
-            <option value="0">All Categories</option>
+            <option value="all">All Categories</option>
             <option value="stretch-film">Stretch Film &amp; Pallet Wrap</option>
             <option value="polythene">Polythene &amp; Grip Bags</option>
             <option value="tapes">Packing Tapes</option>
@@ -233,6 +233,213 @@
     </div>
   </section>
 
+  <!-- ============ PRODUCT CONTAINER 1: STRETCH FILM & PALLET WRAP ============ -->
+  <section class="products-section" style="background: #f8fafc; border-top: 1px solid #e2e8f0;">
+    <div class="container">
+      <div class="section-header-flex">
+        <div class="section-header-left">
+          <span style="color: #10b981; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">HEAVY-DUTY LOAD CONTAINMENT</span>
+          <h2 class="section-main-heading">INDUSTRIAL STRETCH FILM &amp; PALLET WRAP</h2>
+          <p class="section-sub-heading">Factory-direct hand wraps, extended core rolls, high-yield machine wraps, and black security pallet film.</p>
+        </div>
+        <a href="shop.html?category=stretch-film" class="btn-view-all">
+          View All 37 Stretch Films <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="products-grid" id="stretchFilmGrid">
+        <!-- Rendered dynamically by js/app.min.js -->
+      </div>
+
+      <div class="category-highlight-strip">
+        <div class="highlight-item"><i class="fas fa-shield-alt"></i> Puncture &amp; Tear Resistant (17mu - 30mu)</div>
+        <div class="highlight-item"><i class="fas fa-expand-arrows-alt"></i> Up to 250% Pre-Stretch Retention</div>
+        <div class="highlight-item"><i class="fas fa-recycle"></i> 100% Recyclable Virgin &amp; Recycled LLDPE</div>
+        <div class="highlight-item"><i class="fas fa-pallet"></i> Tiered Discounts on Full Pallets (414 Rolls)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCT CONTAINER 2: POSTAL & ECOMMERCE PACKAGING ============ -->
+  <section class="products-section">
+    <div class="container">
+      <div class="section-header-flex">
+        <div class="section-header-left">
+          <span style="color: #10b981; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">FULFILMENT &amp; MAILING ESSENTIALS</span>
+          <h2 class="section-main-heading">POSTAL MAILING BAGS &amp; ROYAL MAIL PIP BOXES</h2>
+          <p class="section-sub-heading">Tear-proof postage mailing bags in assorted vibrant colors and Royal Mail PIP qualifying cardboard postal boxes.</p>
+        </div>
+        <a href="shop.html?category=mailing-bags" class="btn-view-all">
+          View All Postal Supplies <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="products-grid" id="postalPackagingGrid">
+        <!-- Rendered dynamically by js/app.min.js -->
+      </div>
+
+      <div class="category-highlight-strip">
+        <div class="highlight-item"><i class="fas fa-lock"></i> Permanent Tamper-Evident Peel &amp; Seal Adhesive</div>
+        <div class="highlight-item"><i class="fas fa-weight-hanging"></i> Ultra Lightweight for Reduced Royal Mail Postage Rates</div>
+        <div class="highlight-item"><i class="fas fa-water"></i> 100% Waterproof &amp; Weatherproof Poly Protection</div>
+        <div class="highlight-item"><i class="fas fa-cubes"></i> C4, C5 &amp; C6 Standard Letter / Large Letter Sizing</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHOLESALE TIER SAVINGS MATRIX ============ -->
+  <section class="pricing-matrix-section">
+    <div class="container">
+      <div class="section-header-wrap">
+        <span style="color: #10b981; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">COMMERCIAL VOLUME BUYING</span>
+        <h2 class="section-main-heading">TIERED WHOLESALE SAVINGS MATRIX</h2>
+        <p class="section-sub-heading">Buy in bulk and lock in deeper trade margin savings across pallet wraps, mailing bags, and tapes</p>
+      </div>
+
+      <div class="pricing-matrix-grid">
+        <!-- Tier 1 -->
+        <div class="pricing-tier-card">
+          <h3 class="tier-name">Pack Quantity</h3>
+          <div class="tier-volume">1 to 5 Outer Packs</div>
+          <div class="tier-savings">Trade Base <span>rates</span></div>
+          <ul class="tier-features">
+            <li><i class="fas fa-check"></i> Standard wholesale price</li>
+            <li><i class="fas fa-check"></i> Free delivery over £50</li>
+            <li><i class="fas fa-check"></i> Next-day parcel courier</li>
+            <li><i class="fas fa-check"></i> Instant checkout invoice</li>
+          </ul>
+          <a href="shop.html" class="btn-hero-secondary" style="background:#0f3e2e; color:#fff !important; text-align:center; justify-content:center;">Shop Packs</a>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="pricing-tier-card">
+          <span class="tier-badge">Popular</span>
+          <h3 class="tier-name">Case Saver</h3>
+          <div class="tier-volume">6 to 25 Outer Packs</div>
+          <div class="tier-savings">Save ~15% <span>off trade</span></div>
+          <ul class="tier-features">
+            <li><i class="fas fa-check"></i> Lower unit price per roll</li>
+            <li><i class="fas fa-check"></i> Priority warehouse dispatch</li>
+            <li><i class="fas fa-check"></i> Free nationwide shipping</li>
+            <li><i class="fas fa-check"></i> Mixed category allowances</li>
+          </ul>
+          <a href="shop.html" class="btn-hero-secondary" style="background:#0f3e2e; color:#fff !important; text-align:center; justify-content:center;">View Volume Packs</a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="pricing-tier-card featured-tier">
+          <span class="tier-badge" style="background:#165b43; color:#ffffff;">Best Value</span>
+          <h3 class="tier-name">Full Pallet</h3>
+          <div class="tier-volume">100 to 414+ Rolls</div>
+          <div class="tier-savings">Save Up to 35% <span>off</span></div>
+          <ul class="tier-features">
+            <li><i class="fas fa-check"></i> Deepest pallet trade rates</li>
+            <li><i class="fas fa-check"></i> Tail-lift pallet delivery included</li>
+            <li><i class="fas fa-check"></i> Dedicated account specialist</li>
+            <li><i class="fas fa-check"></i> 30-day invoice terms available</li>
+          </ul>
+          <a href="contact-us.html" class="btn-hero-primary" style="text-align:center; justify-content:center;">Pallet Quote</a>
+        </div>
+
+        <!-- Tier 4 -->
+        <div class="pricing-tier-card">
+          <h3 class="tier-name">Contract &amp; Container</h3>
+          <div class="tier-volume">5+ Pallets / Full Truckloads</div>
+          <div class="tier-savings">Factory Direct <span>pricing</span></div>
+          <ul class="tier-features">
+            <li><i class="fas fa-check"></i> Custom extrusion &amp; branding</li>
+            <li><i class="fas fa-check"></i> Scheduled call-off orders</li>
+            <li><i class="fas fa-check"></i> Direct factory container freight</li>
+            <li><i class="fas fa-check"></i> SLA guaranteed stock holding</li>
+          </ul>
+          <a href="contact-us.html" class="btn-hero-secondary" style="background:#0f3e2e; color:#fff !important; text-align:center; justify-content:center;">Corporate Enquiries</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCT CONTAINER 3: PACKING TAPES & ADHESIVES ============ -->
+  <section class="products-section" style="background: #ffffff;">
+    <div class="container">
+      <div class="section-header-flex">
+        <div class="section-header-left">
+          <span style="color: #10b981; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">HIGH-TACK PARCEL SEALING</span>
+          <h2 class="section-main-heading">COMMERCIAL PACKING TAPES &amp; ADHESIVES</h2>
+          <p class="section-sub-heading">Heavy-duty clear &amp; brown carton sealing tapes, low-noise polypropylene, printed fragile warning tapes, and dispensers.</p>
+        </div>
+        <a href="shop.html?category=tapes" class="btn-view-all">
+          View All 15 Packing Tapes <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="products-grid" id="tapesGrid">
+        <!-- Rendered dynamically by js/app.min.js -->
+      </div>
+
+      <div class="category-highlight-strip">
+        <div class="highlight-item"><i class="fas fa-volume-mute"></i> Low-Noise &amp; Silent Unwind Formulations</div>
+        <div class="highlight-item"><i class="fas fa-temperature-low"></i> Cold-Store &amp; Temperature Resistant Acrylic</div>
+        <div class="highlight-item"><i class="fas fa-tape"></i> Standard 48mm x 66m / Extended 150m Core Sizes</div>
+        <div class="highlight-item"><i class="fas fa-hand-holding-box"></i> Compatible with All Standard Tape Guns</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCT CONTAINER 4: POLYTHENE & REFUSE SACKS ============ -->
+  <section class="products-section" style="background: #f8fafc; border-top: 1px solid #e2e8f0;">
+    <div class="container">
+      <div class="section-header-flex">
+        <div class="section-header-left">
+          <span style="color: #10b981; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">STORAGE &amp; WAREHOUSE PROTECTION</span>
+          <h2 class="section-main-heading">POLYTHENE BAGS, GRIP SEALS &amp; HEAVY DUTY SACKS</h2>
+          <p class="section-sub-heading">Clear resealable grip bags, colored carrier bags, wheelie bin liners, and pallet top dust covers.</p>
+        </div>
+        <a href="shop.html?category=polythene" class="btn-view-all">
+          View All Polythene Supplies <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="products-grid" id="polytheneGrid">
+        <!-- Rendered dynamically by js/app.min.js -->
+      </div>
+
+      <div class="category-highlight-strip">
+        <div class="highlight-item"><i class="fas fa-grip-lines"></i> Heavy Duty Snap-Lock Resealable Grip Ribs</div>
+        <div class="highlight-item"><i class="fas fa-trash-alt"></i> 140G &amp; 160G Puncture-Proof Compactor Sacks</div>
+        <div class="highlight-item"><i class="fas fa-pallet"></i> Weatherproof Pallet Top Protective Sheeting</div>
+        <div class="highlight-item"><i class="fas fa-box-open"></i> Food Safe &amp; Industrial Grade Certifications</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WAREHOUSE METRICS & TRUST STATS ============ -->
+  <section class="trade-stats-section">
+    <div class="container">
+      <div class="trade-stats-grid">
+        <div class="trade-stat-card">
+          <div class="stat-number">99.8%</div>
+          <div class="stat-title">On-Time UK Dispatch</div>
+          <div class="stat-desc">Same-day dispatch on orders received before 2 PM</div>
+        </div>
+        <div class="trade-stat-card">
+          <div class="stat-number">10M+</div>
+          <div class="stat-title">Meters Supplied</div>
+          <div class="stat-desc">High-yield commercial stretch films and pallet wraps</div>
+        </div>
+        <div class="trade-stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-title">Recyclable Materials</div>
+          <div class="stat-desc">Compliant with UK Plastic Packaging Tax regulations</div>
+        </div>
+        <div class="trade-stat-card">
+          <div class="stat-number">&lt; 2h</div>
+          <div class="stat-title">Trade Quote SLA</div>
+          <div class="stat-desc">Rapid customized quote response for full pallet volumes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ TRADE FEATURES VALUE GRID ============ -->
   <section class="trade-features-section">
     <div class="container">
@@ -289,6 +496,127 @@
             <i class="fas fa-phone"></i> Call 020 8123 4567
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VERIFIED TRADE CUSTOMER REVIEWS ============ -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="section-header-wrap">
+        <span style="color: #10b981; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">TRUSTED BY UK BUSINESSES</span>
+        <h2 class="section-main-heading">WHAT OUR TRADE CLIENTS SAY</h2>
+        <p class="section-sub-heading">Real feedback from logistics directors, warehouse supervisors, and online retailers across the UK</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">"Switching to shrinkwraps.co.uk for our 23mu machine pallet wrap reduced our wrapping breakages to near zero. Excellent pallet delivery turnaround and genuine wholesale pricing."</p>
+          <div class="review-author">
+            <div class="author-avatar">DM</div>
+            <div class="author-info">
+              <h4>David Morgan</h4>
+              <span>Warehouse Operations Director, Birmingham</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">"We dispatch over 4,000 parcels weekly. Their grey mailing bags and Royal Mail PIP boxes are sturdy, lightweight, and have helped us keep our postal weight brackets under budget."</p>
+          <div class="review-author">
+            <div class="author-avatar">SL</div>
+            <div class="author-info">
+              <h4>Sarah Lawson</h4>
+              <span>Fulfilment Manager, Ecommerce Retailer (London)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">"Outstanding service for bulk packing tapes and clear wrap. Trade credit terms and automated VAT invoices make our procurement process seamless every single month."</p>
+          <div class="review-author">
+            <div class="author-avatar">RK</div>
+            <div class="author-info">
+              <h4>Robert Kershaw</h4>
+              <span>Logistics Coordinator, Manchester Hub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PACKAGING INSIGHTS & TECHNICAL GUIDES (BLOG PREVIEW) ============ -->
+  <section class="blog-preview-section">
+    <div class="container">
+      <div class="section-header-flex">
+        <div class="section-header-left">
+          <span style="color: #10b981; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">INDUSTRY KNOWLEDGE &amp; GUIDES</span>
+          <h2 class="section-main-heading">LATEST PACKAGING INSIGHTS</h2>
+          <p class="section-sub-heading">Expert advice on pallet wrap micron selection, postal rate optimization, and sustainable warehouse packaging.</p>
+        </div>
+        <a href="blog.html" class="btn-view-all">
+          Read All Articles <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="blog-preview-grid">
+        <a href="blog.html" class="blog-card">
+          <div class="blog-card-media">
+            <span class="blog-tag">Technical Guide</span>
+            <img src="images/products/clear-stretch-film-std-500mm.webp" alt="Pallet Wrap Micron Guide" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span><i class="far fa-calendar"></i> 2026</span>
+              <span><i class="far fa-clock"></i> 4 min read</span>
+            </div>
+            <h3 class="blog-card-title">How to Choose the Right Pallet Wrap Micron (17mu vs 23mu vs 30mu)</h3>
+            <p class="blog-card-excerpt">Learn how matching the correct film thickness to your pallet weight prevents cargo shifts while saving material costs.</p>
+            <span class="blog-read-more">Read Technical Guide <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <a href="blog.html" class="blog-card">
+          <div class="blog-card-media">
+            <span class="blog-tag">Postal Efficiency</span>
+            <img src="images/products/pip-boxes-c4.webp" alt="Royal Mail PIP Box Savings" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span><i class="far fa-calendar"></i> 2026</span>
+              <span><i class="far fa-clock"></i> 3 min read</span>
+            </div>
+            <h3 class="blog-card-title">Maximising Royal Mail PIP Guidelines to Slash Small Parcel Shipping Fees</h3>
+            <p class="blog-card-excerpt">How utilizing C4, C5, and C6 postal boxes lets online stores qualify for Large Letter rates over costly parcel tariffs.</p>
+            <span class="blog-read-more">Read Shipping Guide <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <a href="blog.html" class="blog-card">
+          <div class="blog-card-media">
+            <span class="blog-tag">Sustainability</span>
+            <img src="images/products/clear-packaging-tape-48mm.webp" alt="Eco Packaging Strategies" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span><i class="far fa-calendar"></i> 2026</span>
+              <span><i class="far fa-clock"></i> 5 min read</span>
+            </div>
+            <h3 class="blog-card-title">UK Packaging Regulations &amp; 100% Recyclable Trade Solutions</h3>
+            <p class="blog-card-excerpt">A breakdown of the UK Plastic Packaging Tax (PPT) and how switching to high-yield films cuts waste and ensures compliance.</p>
+            <span class="blog-read-more">Read Industry Report <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -367,7 +695,7 @@
       </div>
 
       <div class="bottom-footer" style="padding: 20px 0; border-top: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
-        <p style="font-size: 12px; color: #64748b; margin: 0;">&copy; 2026 shrinkwraps.co.uk - Operated by RAJDHANI UK LIMITED. All Rights Reserved. <!-- VAT NUMBER TO BE CONFIRMED BY CLIENT --> <!-- REGISTRATION NUMBER TO BE CONFIRMED BY CLIENT --></p>
+        <p style="font-size: 12px; color: #64748b; margin: 0;">&copy; 2026 shrinkwraps.co.uk - Operated by RAJDHANI UK LIMITED. All Rights Reserved.</p>
         <div class="payment-badges" style="display: flex; gap: 12px; font-size: 1.5rem; color: #64748b;">
           <span><i class="fab fa-cc-visa"></i></span>
           <span><i class="fab fa-cc-mastercard"></i></span>
