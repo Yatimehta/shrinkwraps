@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Customer &amp; Trade Account Portal - shrinkwraps.co.uk</title>
+  <meta name="description" content="Sign in to your shrinkwraps.co.uk trade or customer account to access wholesale tier pricing, manage packaging orders, view VAT invoices, and track shipments.">
+  <link rel="icon" href="images/favicon-32x32.png" sizes="32x32">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/styles.min.css?v=5.0">
+  <link rel="stylesheet" href="css/components.min.css?v=5.0">
+</head>
+<body>
+
+  <!-- ============ TOP ANNOUNCEMENT BAR ============ -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-left">
+        <a href="affiliate.html"><span class="nav-link-text">JOIN THE AFFILIATE PROGRAMME</span></a>
+        <span class="top-bar-divider">|</span>
+        <a href="terms.html"><span class="nav-link-text">TERMS</span></a>
+        <span class="top-bar-divider">|</span>
+        <span class="top-bar-promo"><i class="fas fa-truck-fast"></i> FREE NEXT-DAY SHIPPING ON ORDERS OVER £50 (EX. VAT)</span>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-social">
+          <a href="http://fb.com/shrinkwrapsuk" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/shrinkwrapsuk" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@shrinkwraps.co.uk" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <span class="top-bar-divider">|</span>
+        <a href="mailto:sales@shrinkwraps.co.uk"><i class="fas fa-envelope"></i> sales@shrinkwraps.co.uk</a>
+        <span class="top-bar-divider">|</span>
+        <a href="contact-us.html">CONTACT</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MAIN HEADER ============ -->
+  <header class="main-header">
+    <div class="container header-wrapper">
+      <a href="index.html" class="site-logo" aria-label="shrinkwraps.co.uk">
+        <img src="images/sw-logo.webp" alt="shrinkwraps.co.uk" style="max-width:240px; height:auto;">
+      </a>
+
+      <div class="header-search">
+        <form class="search-form" onsubmit="event.preventDefault(); const q = document.getElementById('headerSearchInput').value; location.href='shop.html?search=' + encodeURIComponent(q);">
+          <input type="text" id="headerSearchInput" class="search-input" placeholder="Search stretch films, tapes, mailing bags, boxes..." autocomplete="off">
+          <button type="submit" class="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+
+      <a href="tel:02081234567" class="header-trade-phone">
+        <i class="fas fa-phone-volume"></i>
+        <div class="header-phone-text">
+          <span class="header-phone-label">Trade Enquiries</span>
+          <span class="header-phone-num">+44 020 8123 4567</span>
+        </div>
+      </a>
+
+      <div class="header-cart-widget" id="openCartDrawerBtn">
+        <span class="cart-icon-wrap">
+          <i class="fas fa-shopping-basket"></i>
+        </span>
+        <span class="cart-text-wrap">
+          <span class="cart-subtotal-line" id="headerCartTotal">£0.00</span>
+          <span class="cart-count-line"><span class="cart-count-badge">0</span> items</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <nav class="nav-bar">
+    <div class="container nav-wrapper">
+      <div class="categories-dropdown">
+        <span class="categories-dropdown-btn">
+          <span class="menu-opener-icon"><i class="fas fa-bars"></i></span>
+          <span>BROWSE CATEGORIES</span>
+          <i class="fas fa-chevron-down" style="font-size: 11px; margin-left: auto;"></i>
+        </span>
+        <div class="categories-dropdown-menu">
+          <ul class="categories-vertical-nav">
+            <li><a href="shop.html?category=stretch-film">Stretch Film &amp; Pallet Wrap <span>(37)</span></a></li>
+            <li><a href="shop.html?category=polythene">Polythene &amp; Grip Bags <span>(15)</span></a></li>
+            <li><a href="shop.html?category=tapes">Packing Tapes <span>(15)</span></a></li>
+            <li><a href="shop.html?category=paper-products">Paper Products &amp; Labels <span>(10)</span></a></li>
+            <li><a href="shop.html?category=mailing-bags">Mailing Bags <span>(9)</span></a></li>
+            <li><a href="shop.html?category=royal-mail-pip-boxes">Royal Mail PIP Boxes <span>(5)</span></a></li>
+            <li><a href="shop.html?category=refuse-sacks-2">Refuse Sacks &amp; Bin Bags <span>(3)</span></a></li>
+            <li><a href="shop.html?category=pallet-top-covers">Pallet Top Covers <span>(2)</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <ul class="main-nav-list">
+        <li><a href="index.html" class="main-nav-link">HOME</a></li>
+        <li><a href="shop.html" class="main-nav-link">SHOP CATALOG</a></li>
+        <li><a href="shop.html?category=stretch-film" class="main-nav-link">STRETCH FILM</a></li>
+        <li><a href="shop.html?category=mailing-bags" class="main-nav-link">MAILING BAGS</a></li>
+        <li><a href="shop.html?category=tapes" class="main-nav-link">TAPES</a></li>
+        <li><a href="shop.html?category=polythene" class="main-nav-link">POLYTHENE</a></li>
+        <li><a href="about-us.html" class="main-nav-link">ABOUT US</a></li>
+        <li><a href="contact-us.html" class="main-nav-link">TRADE ENQUIRIES</a></li>
+      </ul>
+
+      <div class="nav-right-actions">
+        <a href="login.html" class="nav-action-link active" id="headerAuthBtn"><i class="far fa-user"></i> LOGIN / REGISTER</a>
+        <span class="nav-divider">|</span>
+        <a href="shop.html" class="nav-action-link"><i class="far fa-heart"></i> WISHLIST <span class="action-count">0</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ PAGE BREADCRUMB ============ -->
+  <div style="background: #f1f5f9; padding: 12px 0; border-bottom: 1px solid #e2e8f0; font-size: 13px;">
+    <div class="container" style="display: flex; gap: 8px; align-items: center; color: #64748b;">
+      <a href="index.html" style="color: #0f3e2e; text-decoration: none;"><i class="fas fa-home"></i> Home</a>
+      <span>/</span>
+      <span style="color: #0f172a; font-weight: 600;" id="breadcrumbCurrent">Account &amp; Trade Portal</span>
+    </div>
+  </div>
+
+  <!-- ============ MAIN ACCOUNT PORTAL CONTAINER ============ -->
+  <main class="account-page-wrapper">
+    <div class="container" id="accountPageRoot">
+      <!-- Dynamic Account Portal Content will be injected here via renderAccountPage() -->
+    </div>
+  </main>
+
+  <!-- ============ SITE FOOTER ============ -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="images/sw-logo.webp" alt="shrinkwraps.co.uk" style="max-width:200px; height:auto; filter:brightness(0) invert(1);">
+          </div>
+          <p class="footer-desc">The UK's premier direct trade manufacturer &amp; wholesale packaging supplier. Direct factory pricing, pallet volume discounts, and nationwide express shipping.</p>
+          <div class="footer-contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Unit 2B, Trade City, London, UK</p>
+            <p><i class="fas fa-phone"></i> +44 020 8123 4567</p>
+            <p><i class="fas fa-envelope"></i> sales@shrinkwraps.co.uk</p>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">POPULAR CATEGORIES</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=stretch-film">Stretch Film &amp; Pallet Wrap</a></li>
+            <li><a href="shop.html?category=mailing-bags">Mailing Bags</a></li>
+            <li><a href="shop.html?category=tapes">Packing Tapes</a></li>
+            <li><a href="shop.html?category=polythene">Polythene Bags</a></li>
+            <li><a href="shop.html?category=royal-mail-pip-boxes">PIP Boxes</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">CUSTOMER SERVICE</h4>
+          <ul class="footer-links">
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="terms.html">Delivery Information</a></li>
+            <li><a href="terms.html">Shipping Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="terms.html">Returns &amp; Refunds</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bottom-footer" style="padding: 20px 0; border-top: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
+        <p style="font-size: 12px; color: #64748b; margin: 0;">&copy; 2026 shrinkwraps.co.uk - Operated by RAJDHANI UK LIMITED. All Rights Reserved.</p>
+        <div class="payment-badges" style="display: flex; gap: 12px; font-size: 1.5rem; color: #64748b;">
+          <span><i class="fab fa-cc-visa"></i></span>
+          <span><i class="fab fa-cc-mastercard"></i></span>
+          <span><i class="fab fa-cc-paypal"></i></span>
+          <span><i class="fab fa-cc-amex"></i></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CART DRAWER ============ -->
+  <div class="cart-drawer-backdrop" id="cartDrawerBackdrop"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <h3><i class="fas fa-shopping-basket"></i> Your Shopping Basket</h3>
+      <button class="close-drawer-btn" id="closeCartDrawerBtn">&times;</button>
+    </div>
+    <div class="drawer-body" id="drawerCartItems"></div>
+    <div class="drawer-footer">
+      <div class="drawer-subtotal">
+        <span>Subtotal:</span>
+        <span id="drawerSubtotalAmount">£0.00</span>
+      </div>
+      <div class="drawer-actions">
+        <a href="cart.html" class="btn btn-outline" style="width: 100%; border-color: #cbd5e1; color: #0f172a;">View Cart</a>
+        <a href="checkout.html" class="btn btn-primary" style="width: 100%;">Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/4402081234567" target="_blank" class="floating-whatsapp" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/data.min.js?v=5.0"></script>
+  <script src="js/cart.min.js?v=5.0"></script>
+  <script src="js/auth.min.js?v=5.0"></script>
+  <script src="js/app.min.js?v=5.0"></script>
+
+  <script>
+    /**
+     * Dedicated Account Page Renderer
+     * Handles Guest View, Customer/Trade Dashboard, and Store Admin Dashboard
+     */
+    function renderAccountPage() {
+      const root = document.getElementById('accountPageRoot');
+      if (!root) return;
+
+      const user = authManager.getUser();
+
+      if (!user) {
+        // -------------------------------------------------------------
+        // 1. GUEST VIEW: Benefits + Tabbed Sign In / Trade Register / Admin
+        // -------------------------------------------------------------
+        root.innerHTML = `
+          <div class="account-auth-grid">
+            <!-- Left: Trade Account Benefits -->
+            <div class="auth-benefits-card">
+              <h2>Open a shrinkwraps.co.uk Trade Account</h2>
+              <p class="lead-desc">Join over 1,800 UK logistics hubs, e-commerce sellers, and manufacturers unlocking direct factory packaging prices and dedicated trade terms.</p>
+              
+              <div class="benefits-list">
+                <div class="benefit-item">
+                  <div class="benefit-icon-box"><i class="fas fa-percent"></i></div>
+                  <div class="benefit-text">
+                    <h4>Tiered Wholesale Discounts</h4>
+                    <p>Save up to 30% off list prices on full pallet quantities of stretch films and postal supplies.</p>
+                  </div>
+                </div>
+
+                <div class="benefit-item">
+                  <div class="benefit-icon-box"><i class="fas fa-file-invoice-dollar"></i></div>
+                  <div class="benefit-text">
+                    <h4>30-Day B2B Credit Terms</h4>
+                    <p>Flexible credit limits with automated monthly VAT invoicing for registered UK businesses.</p>
+                  </div>
+                </div>
+
+                <div class="benefit-item">
+                  <div class="benefit-icon-box"><i class="fas fa-truck-fast"></i></div>
+                  <div class="benefit-text">
+                    <h4>Guaranteed Next-Day Delivery</h4>
+                    <p>Direct priority warehouse dispatch with scheduled pallet tail-lift drop-offs nationwide.</p>
+                  </div>
+                </div>
+
+                <div class="benefit-item">
+                  <div class="benefit-icon-box"><i class="fas fa-headset"></i></div>
+                  <div class="benefit-text">
+                    <h4>Dedicated Account Manager</h4>
+                    <p>Bespoke packaging quotes, custom core sizing, and personalized supply-chain support.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Tabbed Authentication Forms -->
+            <div class="auth-form-card">
+              <!-- Quick 1-Click Demo Logins -->
+              <div class="auth-quick-demos" style="border-radius: 12px; margin-bottom: 20px;">
+                <div class="quick-demo-title"><i class="fas fa-bolt"></i> Instant 1-Click Demo Login:</div>
+                <div class="quick-demo-grid">
+                  <button type="button" class="demo-btn demo-trade" onclick="authManager.loginAsDemo('trade')">
+                    <i class="fas fa-building"></i>
+                    <div>
+                      <strong>Trade Buyer</strong>
+                      <small>15% Wholesale Tier</small>
+                    </div>
+                  </button>
+                  <button type="button" class="demo-btn demo-cust" onclick="authManager.loginAsDemo('customer')">
+                    <i class="fas fa-user"></i>
+                    <div>
+                      <strong>Customer</strong>
+                      <small>Retail Buyer</small>
+                    </div>
+                  </button>
+                  <button type="button" class="demo-btn demo-admin" onclick="authManager.loginAsDemo('admin')">
+                    <i class="fas fa-user-shield"></i>
+                    <div>
+                      <strong>Store Admin</strong>
+                      <small>Management Hub</small>
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Navigation Tabs -->
+              <div class="auth-tabs-nav" style="margin: 0 0 20px 0;">
+                <button class="auth-tab-btn active" data-tab="pageLoginTab" onclick="switchPageTab('pageLoginTab')">
+                  <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+                <button class="auth-tab-btn" data-tab="pageRegisterTab" onclick="switchPageTab('pageRegisterTab')">
+                  <i class="fas fa-building"></i> Trade Register
+                </button>
+                <button class="auth-tab-btn" data-tab="pageAdminTab" onclick="switchPageTab('pageAdminTab')">
+                  <i class="fas fa-lock"></i> Admin
+                </button>
+              </div>
+
+              <!-- 1. SIGN IN FORM -->
+              <div class="auth-tab-pane active" id="pageLoginTab">
+                <form onsubmit="handlePageLogin(event)">
+                  <div class="auth-input-group">
+                    <label><i class="fas fa-envelope"></i> Email Address</label>
+                    <input type="email" id="pageLoginEmail" placeholder="e.g. trade@shrinkwraps.co.uk" required>
+                  </div>
+                  <div class="auth-input-group">
+                    <label><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="pageLoginPassword" placeholder="Enter your password" required>
+                  </div>
+                  <div class="auth-form-options">
+                    <label class="remember-me">
+                      <input type="checkbox" checked> <span>Remember this device</span>
+                    </label>
+                    <a href="javascript:void(0);" onclick="authManager.showForgotNotice()" class="forgot-pass-link">Forgot password?</a>
+                  </div>
+                  <div id="pageLoginError" class="auth-error-msg" style="display: none;"></div>
+                  <button type="submit" class="auth-submit-btn">
+                    <span>Sign In to Your Account</span> <i class="fas fa-arrow-right"></i>
+                  </button>
+                </form>
+              </div>
+
+              <!-- 2. TRADE REGISTER FORM -->
+              <div class="auth-tab-pane" id="pageRegisterTab" style="display: none;">
+                <div class="trade-perks-banner">
+                  <i class="fas fa-gem"></i>
+                  <div>
+                    <strong>Trade Account Benefits:</strong> Instant access to wholesale pallet prices and trade invoicing.
+                  </div>
+                </div>
+                <form onsubmit="handlePageRegister(event)">
+                  <div class="auth-input-group">
+                    <label><i class="fas fa-building"></i> Registered Business / Trading Name *</label>
+                    <input type="text" id="pageRegCompany" placeholder="e.g. Apex Logistics Ltd" required>
+                  </div>
+                  <div class="auth-input-row">
+                    <div class="auth-input-group">
+                      <label><i class="fas fa-receipt"></i> UK VAT Number (Optional)</label>
+                      <input type="text" id="pageRegVat" placeholder="e.g. GB982347102">
+                    </div>
+                    <div class="auth-input-group">
+                      <label><i class="fas fa-phone"></i> Telephone *</label>
+                      <input type="tel" id="pageRegPhone" placeholder="e.g. 07700 900123" required>
+                    </div>
+                  </div>
+                  <div class="auth-input-group">
+                    <label><i class="fas fa-user"></i> Primary Contact Name *</label>
+                    <input type="text" id="pageRegName" placeholder="e.g. David Miller" required>
+                  </div>
+                  <div class="auth-input-group">
+                    <label><i class="fas fa-envelope"></i> Accounts / Business Email *</label>
+                    <input type="email" id="pageRegEmail" placeholder="e.g. accounts@yourcompany.co.uk" required>
+                  </div>
+                  <div class="auth-input-row">
+                    <div class="auth-input-group">
+                      <label><i class="fas fa-city"></i> City / Town *</label>
+                      <input type="text" id="pageRegCity" placeholder="e.g. London" required>
+                    </div>
+                    <div class="auth-input-group">
+                      <label><i class="fas fa-mail-bulk"></i> Postcode *</label>
+                      <input type="text" id="pageRegPostcode" placeholder="e.g. TW6 2AB" required>
+                    </div>
+                  </div>
+                  <div class="auth-input-group">
+                    <label><i class="fas fa-lock"></i> Create Account Password *</label>
+                    <input type="password" id="pageRegPassword" placeholder="Minimum 6 characters" minlength="6" required>
+                  </div>
+                  <div id="pageRegError" class="auth-error-msg" style="display: none;"></div>
+                  <button type="submit" class="auth-submit-btn btn-trade-reg">
+                    <span>Submit Trade Application &amp; Register</span> <i class="fas fa-check-circle"></i>
+                  </button>
+                </form>
+              </div>
+
+              <!-- 3. ADMIN ACCESS FORM -->
+              <div class="auth-tab-pane" id="pageAdminTab" style="display: none;">
+                <div class="admin-access-notice">
+                  <i class="fas fa-user-shield"></i>
+                  <p>Restricted access for shrinkwraps.co.uk staff &amp; administrators.</p>
+                </div>
+                <form onsubmit="handlePageAdmin(event)">
+                  <div class="auth-input-group">
+                    <label><i class="fas fa-id-badge"></i> Administrator Email</label>
+                    <input type="email" id="pageAdminEmail" value="admin@shrinkwraps.co.uk" required>
+                  </div>
+                  <div class="auth-input-group">
+                    <label><i class="fas fa-key"></i> Administrator Passcode</label>
+                    <input type="password" id="pageAdminPassword" placeholder="Enter admin password" required>
+                  </div>
+                  <div id="pageAdminError" class="auth-error-msg" style="display: none;"></div>
+                  <button type="submit" class="auth-submit-btn btn-admin-auth">
+                    <i class="fas fa-shield-alt"></i> <span>Authenticate Admin Portal</span>
+                  </button>
+                </form>
+                <div class="auth-quick-hint">
+                  <small>Demo admin credentials: <code>admin@shrinkwraps.co.uk</code> / <code>admin123</code></small>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (user.role === 'admin') {
+        // -------------------------------------------------------------
+        // 2. ADMIN DASHBOARD VIEW
+        // -------------------------------------------------------------
+        const orders = authManager.getOrders();
+        const tradeApps = authManager.getTradeApps();
+        const totalRev = orders.reduce((sum, o) => sum + (o.total || 0), 0);
+        const pendingOrders = orders.filter(o => o.status === 'Pending' || o.status === 'Processing').length;
+        const pendingApps = tradeApps.filter(a => a.status.includes('Pending')).length;
+
+        root.innerHTML = `
+          <!-- Admin Header Banner -->
+          <div class="dashboard-header-banner" style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #4338ca 100%);">
+            <div class="dashboard-user-greeting">
+              <h1><i class="fas fa-shield-halved" style="color: #818cf8; margin-right: 8px;"></i> shrinkwraps.co.uk Operations Hub</h1>
+              <p>Store Administrator &amp; Order Fulfillment Management Console</p>
+            </div>
+            <div class="dashboard-user-badge-wrap">
+              <span class="tier-badge-large" style="background: rgba(239, 68, 68, 0.2); border-color: #ef4444; color: #fca5a5;">
+                <i class="fas fa-user-shield"></i> Admin Access
+              </span>
+              <button onclick="authManager.logout()" class="dash-action-btn" style="background: #ffffff; color: #dc2626; border: none; font-weight: 700; padding: 8px 16px;">
+                <i class="fas fa-sign-out-alt"></i> Log Out
+              </button>
+            </div>
+          </div>
+
+          <!-- Admin Metric Stats -->
+          <div class="dash-stats-grid">
+            <div class="dash-stat-box">
+              <div class="dash-stat-icon"><i class="fas fa-pound-sign"></i></div>
+              <div class="dash-stat-content">
+                <h4>Total Revenue</h4>
+                <span>£${totalRev.toFixed(2)}</span>
+              </div>
+            </div>
+            <div class="dash-stat-box">
+              <div class="dash-stat-icon warning"><i class="fas fa-clock"></i></div>
+              <div class="dash-stat-content">
+                <h4>Active Orders</h4>
+                <span>${pendingOrders} Pending</span>
+              </div>
+            </div>
+            <div class="dash-stat-box">
+              <div class="dash-stat-icon info"><i class="fas fa-building-user"></i></div>
+              <div class="dash-stat-content">
+                <h4>Trade Applications</h4>
+                <span>${pendingApps} Pending</span>
+              </div>
+            </div>
+            <div class="dash-stat-box">
+              <div class="dash-stat-icon"><i class="fas fa-cubes"></i></div>
+              <div class="dash-stat-content">
+                <h4>Catalog SKUs</h4>
+                <span>96 In Stock</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Orders & Applications Grid -->
+          <div class="dashboard-card">
+            <div class="dashboard-card-title">
+              <h3><i class="fas fa-truck-ramp-box"></i> Live Customer &amp; Trade Orders</h3>
+              <span style="font-size: 12px; color: #64748b;">${orders.length} Total Orders Recorded</span>
+            </div>
+            <div class="data-table-wrapper">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Order Ref</th>
+                    <th>Customer / Company</th>
+                    <th>Date</th>
+                    <th>Items Ordered</th>
+                    <th>Total (ex. VAT)</th>
+                    <th>Status</th>
+                    <th>Update Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${orders.map(o => `
+                    <tr>
+                      <td><strong>${o.id}</strong></td>
+                      <td>
+                        <strong>${o.company || o.userEmail}</strong>
+                        <div style="font-size: 11px; color: #64748b;">${o.userEmail}</div>
+                      </td>
+                      <td>${o.date}</td>
+                      <td>
+                        <div style="max-width: 260px; font-size: 12px; line-height: 1.4;">
+                          ${o.items.map(i => `${i.qty}x ${i.name.substring(0, 28)}...`).join('<br>')}
+                        </div>
+                      </td>
+                      <td><strong>£${Number(o.total).toFixed(2)}</strong></td>
+                      <td><span class="order-status-pill ${o.status}">${o.status}</span></td>
+                      <td>
+                        <select onchange="updateAdminOrderStatus('${o.id}', this.value)" style="padding: 4px 8px; font-size: 12px; border-radius: 6px; border: 1px solid #cbd5e1;">
+                          <option value="Pending" ${o.status === 'Pending' ? 'selected' : ''}>Pending</option>
+                          <option value="Processing" ${o.status === 'Processing' ? 'selected' : ''}>Processing</option>
+                          <option value="Dispatched" ${o.status === 'Dispatched' ? 'selected' : ''}>Dispatched</option>
+                          <option value="Delivered" ${o.status === 'Delivered' ? 'selected' : ''}>Delivered</option>
+                        </select>
+                      </td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Trade Applications Management -->
+          <div class="dashboard-card">
+            <div class="dashboard-card-title">
+              <h3><i class="fas fa-id-card"></i> B2B Wholesale Trade Account Applications</h3>
+              <span style="font-size: 12px; color: #64748b;">${tradeApps.length} Applications</span>
+            </div>
+            <div class="data-table-wrapper">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>App ID</th>
+                    <th>Company Name</th>
+                    <th>Contact Person</th>
+                    <th>Email</th>
+                    <th>UK VAT No.</th>
+                    <th>Est. Monthly Spend</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${tradeApps.map(a => `
+                    <tr>
+                      <td><strong>${a.id}</strong></td>
+                      <td><strong>${a.company}</strong></td>
+                      <td>${a.contactName}</td>
+                      <td><a href="mailto:${a.email}" style="color: #059669;">${a.email}</a></td>
+                      <td><code>${a.vatNumber || 'N/A'}</code></td>
+                      <td>${a.monthlySpend || '£1,000+'}</td>
+                      <td>
+                        <span class="order-status-pill ${a.status === 'Approved' ? 'Dispatched' : 'Pending'}">${a.status}</span>
+                      </td>
+                      <td>
+                        ${a.status !== 'Approved' ? `
+                          <button class="dash-action-btn" onclick="approveTradeApp('${a.id}')" style="background: #ecfdf5; color: #059669; border-color: #a7f3d0; font-weight: 700;">
+                            <i class="fas fa-check"></i> Approve 15% Tier
+                          </button>
+                        ` : `
+                          <span style="color: #059669; font-size: 11.5px; font-weight: 700;"><i class="fas fa-check-circle"></i> Active Partner</span>
+                        `}
+                      </td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      } else {
+        // -------------------------------------------------------------
+        // 3. CUSTOMER / B2B TRADE BUYER DASHBOARD
+        // -------------------------------------------------------------
+        const isTrade = user.role === 'trade';
+        const orders = authManager.getOrders().filter(o => o.userEmail === user.email || o.userId === user.id);
+        const totalSpent = orders.reduce((sum, o) => sum + (o.total || 0), 0);
+
+        root.innerHTML = `
+          <!-- User Header Banner -->
+          <div class="dashboard-header-banner">
+            <div class="dashboard-user-greeting">
+              <h1>Welcome back, ${user.name || user.company}!</h1>
+              <p>${isTrade ? `Trade Account: <strong>${user.company}</strong>` : 'Retail Customer Account'} &bull; Member since ${user.createdAt || '2026'}</p>
+            </div>
+            <div class="dashboard-user-badge-wrap">
+              <span class="tier-badge-large">
+                <i class="fas ${isTrade ? 'fa-gem' : 'fa-user-check'}"></i> ${user.tradeTier || 'Customer Member'}
+              </span>
+              <button onclick="authManager.logout()" class="dash-action-btn" style="background: #ffffff; color: #dc2626; border: none; font-weight: 700; padding: 8px 16px;">
+                <i class="fas fa-sign-out-alt"></i> Log Out
+              </button>
+            </div>
+          </div>
+
+          <!-- Stats Overview -->
+          <div class="dash-stats-grid">
+            <div class="dash-stat-box">
+              <div class="dash-stat-icon"><i class="fas fa-box-open"></i></div>
+              <div class="dash-stat-content">
+                <h4>Total Orders</h4>
+                <span>${orders.length}</span>
+              </div>
+            </div>
+            <div class="dash-stat-box">
+              <div class="dash-stat-icon info"><i class="fas fa-percent"></i></div>
+              <div class="dash-stat-content">
+                <h4>Trade Discount</h4>
+                <span>${isTrade ? '15% Wholesale' : '0% (Standard)'}</span>
+              </div>
+            </div>
+            <div class="dash-stat-box">
+              <div class="dash-stat-icon warning"><i class="fas fa-file-invoice"></i></div>
+              <div class="dash-stat-content">
+                <h4>Credit Terms</h4>
+                <span>${user.creditLimit || 'Pay As You Go'}</span>
+              </div>
+            </div>
+            <div class="dash-stat-box">
+              <div class="dash-stat-icon"><i class="fas fa-coins"></i></div>
+              <div class="dash-stat-content">
+                <h4>Total Volume</h4>
+                <span>£${totalSpent.toFixed(2)}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Dashboard Split Grid -->
+          <div class="dashboard-grid-layout">
+            <!-- Left: Order History & Reordering -->
+            <div>
+              <div class="dashboard-card">
+                <div class="dashboard-card-title">
+                  <h3><i class="fas fa-history"></i> Order History &amp; Consignment Tracking</h3>
+                  <a href="shop.html" class="dash-action-btn" style="text-decoration: none;"><i class="fas fa-plus"></i> New Order</a>
+                </div>
+
+                ${orders.length > 0 ? `
+                  <div class="data-table-wrapper">
+                    <table class="dash-table">
+                      <thead>
+                        <tr>
+                          <th>Order #</th>
+                          <th>Date</th>
+                          <th>Items Summary</th>
+                          <th>Total (ex. VAT)</th>
+                          <th>Status</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        ${orders.map(o => `
+                          <tr>
+                            <td><strong>${o.id}</strong></td>
+                            <td>${o.date}</td>
+                            <td>
+                              <div style="font-size: 12px; line-height: 1.4;">
+                                ${o.items.map(i => `${i.qty}x ${i.name.substring(0, 24)}...`).join('<br>')}
+                              </div>
+                            </td>
+                            <td><strong>£${Number(o.total).toFixed(2)}</strong></td>
+                            <td>
+                              <span class="order-status-pill ${o.status}">
+                                <i class="fas ${o.status === 'Dispatched' ? 'fa-truck' : (o.status === 'Delivered' ? 'fa-check' : 'fa-clock')}"></i>
+                                ${o.status}
+                              </span>
+                              ${o.trackingNumber ? `<div style="font-size: 10.5px; color: #64748b; margin-top: 2px;">Track: ${o.trackingNumber}</div>` : ''}
+                            </td>
+                            <td>
+                              <button class="dash-action-btn" onclick="reorderItems('${o.id}')" title="Reorder items into basket">
+                                <i class="fas fa-redo"></i> Reorder
+                              </button>
+                            </td>
+                          </tr>
+                        `).join('')}
+                      </tbody>
+                    </table>
+                  </div>
+                ` : `
+                  <div style="text-align: center; padding: 40px 20px; color: #64748b;">
+                    <i class="fas fa-box-open" style="font-size: 40px; color: #cbd5e1; margin-bottom: 12px;"></i>
+                    <p style="margin: 0 0 14px;">You haven't placed any packaging orders yet.</p>
+                    <a href="shop.html" class="btn btn-primary">Browse Packaging Catalog</a>
+                  </div>
+                `}
+              </div>
+            </div>
+
+            <!-- Right: Account Details, Addresses, and Support -->
+            <div>
+              <!-- Account Profile Details -->
+              <div class="dashboard-card">
+                <div class="dashboard-card-title">
+                  <h3><i class="fas fa-building"></i> Account Details</h3>
+                </div>
+                <div style="font-size: 13px; line-height: 1.8; color: #334155;">
+                  ${user.company ? `<div><strong>Company:</strong> ${user.company}</div>` : ''}
+                  <div><strong>Contact:</strong> ${user.name}</div>
+                  <div><strong>Email:</strong> ${user.email}</div>
+                  <div><strong>Phone:</strong> ${user.phone || '+44 020 8123 4567'}</div>
+                  ${user.vatNumber ? `<div><strong>VAT Reg:</strong> <code>${user.vatNumber}</code></div>` : ''}
+                </div>
+              </div>
+
+              <!-- Saved Delivery Address -->
+              <div class="dashboard-card">
+                <div class="dashboard-card-title">
+                  <h3><i class="fas fa-map-marker-alt"></i> Default Delivery Address</h3>
+                </div>
+                <div style="font-size: 13px; line-height: 1.6; color: #475569; background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid #f1f5f9;">
+                  <strong>${user.company || user.name}</strong><br>
+                  ${user.address?.line1 || 'Unit 4, Trade City Hub'}<br>
+                  ${user.address?.city || 'London'}, ${user.address?.postcode || 'TW6 2AB'}<br>
+                  ${user.address?.country || 'United Kingdom'}
+                </div>
+              </div>
+
+              <!-- Trade Support Hotline -->
+              <div class="dashboard-card" style="background: linear-gradient(135deg, #09261c 0%, #0f3e2e 100%); color: #ffffff;">
+                <h3 style="font-size: 15px; color: #34d399; margin: 0 0 8px; display: flex; align-items: center; gap: 8px;">
+                  <i class="fas fa-headset"></i> Trade Account Hotline
+                </h3>
+                <p style="font-size: 12px; color: #cbd5e1; margin: 0 0 14px; line-height: 1.4;">
+                  Need bespoke pallet quotations, custom printed stretch film, or bulk truckload dispatch?
+                </p>
+                <a href="tel:02081234567" style="display: inline-flex; align-items: center; gap: 8px; background: #10b981; color: #ffffff; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 12.5px;">
+                  <i class="fas fa-phone-volume"></i> +44 020 8123 4567
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function switchPageTab(tabId) {
+      document.querySelectorAll('.auth-tabs-nav .auth-tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-tab') === tabId);
+      });
+      document.querySelectorAll('.auth-tab-pane').forEach(pane => {
+        if (pane.id === tabId) {
+          pane.style.display = 'block';
+          pane.classList.add('active');
+        } else {
+          pane.style.display = 'none';
+          pane.classList.remove('active');
+        }
+      });
+    }
+
+    function handlePageLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('pageLoginEmail').value;
+      const pass = document.getElementById('pageLoginPassword').value;
+      const errEl = document.getElementById('pageLoginError');
+
+      const res = authManager.login(email, pass);
+      if (!res.success) {
+        errEl.textContent = res.error;
+        errEl.style.display = 'block';
+      } else {
+        errEl.style.display = 'none';
+        renderAccountPage();
+      }
+    }
+
+    function handlePageRegister(e) {
+      e.preventDefault();
+      const data = {
+        company: document.getElementById('pageRegCompany').value,
+        vatNumber: document.getElementById('pageRegVat').value,
+        phone: document.getElementById('pageRegPhone').value,
+        name: document.getElementById('pageRegName').value,
+        email: document.getElementById('pageRegEmail').value,
+        addressLine1: document.getElementById('pageRegCity').value,
+        city: document.getElementById('pageRegCity').value,
+        postcode: document.getElementById('pageRegPostcode').value,
+        password: document.getElementById('pageRegPassword').value,
+        role: 'trade'
+      };
+      const errEl = document.getElementById('pageRegError');
+
+      const res = authManager.register(data);
+      if (!res.success) {
+        errEl.textContent = res.error;
+        errEl.style.display = 'block';
+      } else {
+        errEl.style.display = 'none';
+        renderAccountPage();
+      }
+    }
+
+    function handlePageAdmin(e) {
+      e.preventDefault();
+      const email = document.getElementById('pageAdminEmail').value;
+      const pass = document.getElementById('pageAdminPassword').value;
+      const errEl = document.getElementById('pageAdminError');
+
+      const res = authManager.login(email, pass);
+      if (!res.success) {
+        errEl.textContent = res.error;
+        errEl.style.display = 'block';
+      } else {
+        errEl.style.display = 'none';
+        renderAccountPage();
+      }
+    }
+
+    function updateAdminOrderStatus(orderId, status) {
+      authManager.updateOrderStatus(orderId, status);
+      renderAccountPage();
+    }
+
+    function approveTradeApp(appId) {
+      authManager.updateTradeAppStatus(appId, 'Approved');
+      renderAccountPage();
+    }
+
+    function reorderItems(orderId) {
+      const orders = authManager.getOrders();
+      const order = orders.find(o => o.id === orderId);
+      if (order && order.items && typeof cartManager !== 'undefined') {
+        order.items.forEach(i => {
+          cartManager.addCustomItem({
+            name: i.name,
+            price: i.price,
+            quantity: i.qty || 1,
+            image: 'images/sw-logo.webp'
+          });
+        });
+        authManager.showToast(`Items from order ${orderId} added to your basket!`);
+        cartManager.openDrawer();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderAccountPage();
+    });
+  </script>
+</body>
+</html>
