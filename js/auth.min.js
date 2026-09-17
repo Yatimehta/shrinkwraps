@@ -13,11 +13,90 @@ class AuthManager {
     this.initDatabase();
     this.currentUser = this.loadSession();
 
+    this.injectGlobalStyles();
     document.addEventListener('DOMContentLoaded', () => {
+      this.injectGlobalStyles();
       this.injectSlideoverModal();
       this.updateHeaderUI();
       this.bindTriggers();
     });
+  }
+
+  injectGlobalStyles() {
+    if (document.getElementById('authInjectedGlobalStyles')) return;
+    const style = document.createElement('style');
+    style.id = 'authInjectedGlobalStyles';
+    style.innerHTML = `
+      .user-header-profile-dropdown { position: relative !important; display: inline-flex !important; align-items: center !important; }
+      .user-logged-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        background: rgba(255, 255, 255, 0.18) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.35) !important;
+        padding: 6px 14px !important;
+        border-radius: 9999px !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        cursor: pointer !important;
+        font-family: inherit !important;
+        text-decoration: none !important;
+        line-height: 1.2 !important;
+        transition: all 0.2s ease !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
+      }
+      .user-logged-badge:hover {
+        background: rgba(255, 255, 255, 0.28) !important;
+        border-color: #ffffff !important;
+      }
+      .user-role-pill {
+        font-size: 10px !important;
+        font-weight: 800 !important;
+        text-transform: uppercase !important;
+        padding: 2px 8px !important;
+        border-radius: 999px !important;
+        letter-spacing: 0.4px !important;
+      }
+      .user-role-pill.trade { background: #fbbf24 !important; color: #78350f !important; }
+      .user-role-pill.admin { background: #ef4444 !important; color: #ffffff !important; }
+      .user-role-pill.customer { background: #10b981 !important; color: #ffffff !important; }
+
+      .user-dropdown-menu {
+        position: absolute !important;
+        top: calc(100% + 10px) !important;
+        right: 0 !important;
+        width: 260px !important;
+        background: #ffffff !important;
+        border-radius: 12px !important;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08) !important;
+        padding: 12px !important;
+        display: none !important;
+        z-index: 99999 !important;
+        text-align: left !important;
+      }
+      .user-dropdown-menu.active {
+        display: block !important;
+      }
+      .dropdown-user-info { display: flex !important; flex-direction: column !important; gap: 2px !important; padding: 4px 6px 8px !important; color: #0f172a !important; }
+      .dropdown-user-info strong { font-size: 13.5px !important; color: #0f172a !important; }
+      .dropdown-user-info small { color: #64748b !important; font-size: 11.5px !important; }
+      .trade-tier-tag { display: inline-flex !important; align-items: center !important; gap: 4px !important; margin-top: 6px !important; background: #fef3c7 !important; color: #92400e !important; font-size: 11px !important; font-weight: 700 !important; padding: 3px 8px !important; border-radius: 6px !important; }
+      .dropdown-divider { height: 1px !important; background: #f1f5f9 !important; margin: 6px 0 !important; }
+      .dropdown-item {
+        display: flex !important; align-items: center !important; gap: 10px !important;
+        width: 100% !important; padding: 9px 12px !important; font-size: 13px !important;
+        font-weight: 600 !important; color: #334155 !important; border-radius: 8px !important;
+        text-decoration: none !important; background: none !important; border: none !important;
+        text-align: left !important; cursor: pointer !important; box-sizing: border-box !important;
+      }
+      .dropdown-item:hover { background: #f1f5f9 !important; color: #0f3e2e !important; }
+      .dropdown-item.logout-btn { color: #dc2626 !important; }
+      .dropdown-item.logout-btn:hover { background: #fef2f2 !important; color: #b91c1c !important; }
+    `;
+    if (document.head) {
+      document.head.appendChild(style);
+    }
   }
 
   /* -------------------------------------------------------------
