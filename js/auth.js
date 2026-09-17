@@ -432,8 +432,75 @@ class AuthManager {
   }
 
   /* -------------------------------------------------------------
-   * ADMIN METHODS
+   * ADMIN METHODS & PRODUCT CATALOG MANAGEMENT
    * ----------------------------------------------------------- */
+  getProducts() {
+    if (typeof PRODUCTS_DATA === 'undefined') return [];
+    const deletedIds = JSON.parse(localStorage.getItem('shrinkwraps_deleted_products') || '[]');
+    const customProducts = JSON.parse(localStorage.getItem('shrinkwraps_custom_products') || '[]');
+    
+    // Filter base products
+    const activeBase = PRODUCTS_DATA.filter(p => !deletedIds.includes(p.id));
+    // Merge custom products
+    return [...customProducts.filter(p => !deletedIds.includes(p.id)), ...activeBase];
+  }
+
+  addProduct(productData) {
+    const customProducts = JSON.parse(localStorage.getItem('shrinkwraps_custom_products') || '[]');
+    const newProduct = {
+      id: 'p-custom-' + Date.now().toString(36),
+      name: productData.name.trim(),
+      category: productData.category || 'stretch-film',
+      price: parseFloat(productData.price) || 19.99,
+      basePrice: parseFloat(productData.price) || 19.99,
+      originalPrice: (parseFloat(productData.price) || 19.99) * 1.2,
+      sku: productData.sku || 'SW-CUST-' + Math.floor(1000 + Math.random() * 9000),
+      badge: productData.badge || 'NEW',
+      image: productData.image || 'images/products/clear-stretch-film-std-500mm.webp',
+      images: [productData.image || 'images/products/clear-stretch-film-std-500mm.webp'],
+      rating: 5.0,
+      reviewsCount: 1,
+      inStock: true,
+      stockCount: parseInt(productData.stock) || 100,
+      description: productData.description || 'Premium industrial grade packaging manufactured in the UK. Next-day delivery available across the UK.',
+      hasVariations: false
+    };
+
+    customProducts.unshift(newProduct);
+    localStorage.setItem('shrinkwraps_custom_products', JSON.stringify(customProducts));
+
+    if (typeof PRODUCTS_DATA !== 'undefined') {
+      PRODUCTS_DATA.unshift(newProduct);
+    }
+
+    this.showToast(`Product "${newProduct.name.substring(0, 25)}..." added to catalog!`);
+    return newProduct;
+  }
+
+  deleteProduct(productId) {
+    const deletedIds = JSON.parse(localStorage.getItem('shrinkwraps_deleted_products') || '[]');
+    if (!deletedIds.includes(productId)) {
+      deletedIds.push(productId);
+      localStorage.setItem('shrinkwraps_deleted_products', JSON.stringify(deletedIds));
+    }
+
+    // Also remove from custom products if there
+    let customProducts = JSON.parse(localStorage.getItem('shrinkwraps_custom_products') || '[]');
+    customProducts = customProducts.filter(p => p.id !== productId);
+    localStorage.setItem('shrinkwraps_custom_products', JSON.stringify(customProducts));
+
+    // Remove from in-memory array
+    if (typeof PRODUCTS_DATA !== 'undefined') {
+      const idx = PRODUCTS_DATA.findIndex(p => p.id === productId);
+      if (idx > -1) {
+        PRODUCTS_DATA.splice(idx, 1);
+      }
+    }
+
+    this.showToast(`Product ${productId} removed from store catalog.`);
+    return true;
+  }
+
   updateOrderStatus(orderId, newStatus) {
     const orders = this.getOrders();
     const order = orders.find(o => o.id === orderId);

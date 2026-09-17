@@ -744,6 +744,125 @@
               </table>
             </div>
           </div>
+
+          <!-- Product Catalog Management (Add & Remove Products) -->
+          <div class="dashboard-card" id="adminCatalogSection">
+            <div class="dashboard-card-title" style="flex-wrap: wrap; gap: 12px;">
+              <h3><i class="fas fa-boxes-stacked"></i> Store Product Catalog Management</h3>
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <input type="text" id="adminProductSearch" placeholder="Search catalog items..." oninput="filterAdminProducts(this.value)" style="padding: 6px 12px; font-size: 12.5px; border: 1px solid #cbd5e1; border-radius: 6px; width: 200px;">
+                <button type="button" class="dash-action-btn" onclick="showAddProductModal()" style="background: #059669; color: #ffffff; border: none; font-weight: 700; padding: 7px 14px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;">
+                  <i class="fas fa-plus-circle"></i> Add New Product
+                </button>
+              </div>
+            </div>
+            <div class="data-table-wrapper">
+              <table class="dash-table" id="adminProductsTable">
+                <thead>
+                  <tr>
+                    <th style="width: 60px;">Image</th>
+                    <th>Product Title &amp; Category</th>
+                    <th>SKU</th>
+                    <th>Price (ex. VAT)</th>
+                    <th>Badge</th>
+                    <th>Stock</th>
+                    <th style="text-align: right;">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="adminProductsTbody">
+                  ${authManager.getProducts().slice(0, 30).map(p => `
+                    <tr id="prod-row-${p.id}">
+                      <td>
+                        <img src="${p.image}" alt="${p.name}" style="width: 44px; height: 44px; object-fit: contain; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0;">
+                      </td>
+                      <td>
+                        <strong>${p.name}</strong>
+                        <div style="font-size: 11.5px; color: #059669; text-transform: uppercase; font-weight: 600;">${(p.category || '').replace(/-/g, ' ')}</div>
+                      </td>
+                      <td><code>${p.sku || p.id}</code></td>
+                      <td><strong>£${Number(p.price || p.basePrice || 0).toFixed(2)}</strong></td>
+                      <td><span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: #f1f5f9; color: #334155;">${p.badge || 'STANDARD'}</span></td>
+                      <td><span style="color: #059669; font-weight: 700;">In Stock</span></td>
+                      <td style="text-align: right;">
+                        <button type="button" class="dash-action-btn" onclick="adminDeleteProduct('${p.id}', '${p.name.replace(/'/g, "\\'")}')" style="background: #fef2f2; color: #dc2626; border-color: #fecaca;" title="Remove this product from store catalog">
+                          <i class="fas fa-trash-alt"></i> Remove
+                        </button>
+                      </td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Add Product Modal -->
+          <div class="auth-drawer-backdrop" id="addProductBackdrop" onclick="closeAddProductModal()" style="display: none; opacity: 1; pointer-events: auto; background: rgba(0,0,0,0.5);"></div>
+          <div id="addProductModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 540px; max-width: 94vw; background: #ffffff; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.25); z-index: 10000; max-height: 90vh; overflow-y: auto;">
+            <div style="padding: 20px 24px; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; background: #f8fafc; border-radius: 16px 16px 0 0;">
+              <h3 style="margin: 0; font-size: 18px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-box-open" style="color: #059669;"></i> Add New Store Product
+              </h3>
+              <button onclick="closeAddProductModal()" style="background: none; border: none; font-size: 22px; cursor: pointer; color: #64748b;">&times;</button>
+            </div>
+            <form onsubmit="submitAddProduct(event)" style="padding: 24px;">
+              <div class="auth-input-group">
+                <label>Product Title *</label>
+                <input type="text" id="newProdName" placeholder="e.g. 500mm x 300m Heavy Duty Pallet Wrap" required>
+              </div>
+              <div class="auth-input-row">
+                <div class="auth-input-group">
+                  <label>Category *</label>
+                  <select id="newProdCategory" required>
+                    <option value="stretch-film">Stretch Film & Pallet Wrap</option>
+                    <option value="mailing-bags">Mailing Bags</option>
+                    <option value="tapes">Packing Tapes</option>
+                    <option value="polythene">Polythene & Grip Bags</option>
+                    <option value="royal-mail-pip-boxes">Royal Mail PIP Boxes</option>
+                    <option value="paper-products">Paper Products & Labels</option>
+                    <option value="refuse-sacks-2">Refuse Sacks</option>
+                    <option value="pallet-top-covers">Pallet Top Covers</option>
+                  </select>
+                </div>
+                <div class="auth-input-group">
+                  <label>Trade Price ex. VAT (£) *</label>
+                  <input type="number" step="0.01" id="newProdPrice" placeholder="e.g. 24.50" required>
+                </div>
+              </div>
+              <div class="auth-input-row">
+                <div class="auth-input-group">
+                  <label>SKU Code</label>
+                  <input type="text" id="newProdSku" placeholder="e.g. SW-HD-500">
+                </div>
+                <div class="auth-input-group">
+                  <label>Highlight Badge</label>
+                  <select id="newProdBadge">
+                    <option value="BESTSELLER">BESTSELLER</option>
+                    <option value="TRADE PRICE">TRADE PRICE</option>
+                    <option value="NEW">NEW</option>
+                    <option value="BULK SAVER">BULK SAVER</option>
+                  </select>
+                </div>
+              </div>
+              <div class="auth-input-group">
+                <label>Product Image</label>
+                <select id="newProdImage">
+                  <option value="images/products/clear-stretch-film-std-500mm.webp">Clear Stretch Film</option>
+                  <option value="images/products/black-stretch-film-ext-core.webp">Black Pallet Wrap</option>
+                  <option value="images/products/grey-postage-bags.webp">Grey Mailing Bags</option>
+                  <option value="images/products/brown-packaging-tape-48mm.webp">Brown Packing Tape</option>
+                  <option value="images/products/royal-mail-pip-boxes.webp">PIP Postal Boxes</option>
+                  <option value="images/products/grip-seal-bags-clear.webp">Grip Seal Bags</option>
+                </select>
+              </div>
+              <div class="auth-input-group">
+                <label>Description</label>
+                <textarea id="newProdDesc" rows="3" placeholder="Brief technical specifications and product description..."></textarea>
+              </div>
+              <button type="submit" class="auth-submit-btn" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+                <i class="fas fa-check-circle"></i> <span>Save &amp; Publish to Catalog</span>
+              </button>
+            </form>
+          </div>
         `;
       } else {
         // -------------------------------------------------------------
@@ -1008,6 +1127,78 @@
         authManager.showToast(`Items from order ${orderId} added to your basket!`);
         cartManager.openDrawer();
       }
+    }
+
+    function showAddProductModal() {
+      const modal = document.getElementById('addProductModal');
+      const backdrop = document.getElementById('addProductBackdrop');
+      if (modal && backdrop) {
+        modal.style.display = 'block';
+        backdrop.style.display = 'block';
+      }
+    }
+
+    function closeAddProductModal() {
+      const modal = document.getElementById('addProductModal');
+      const backdrop = document.getElementById('addProductBackdrop');
+      if (modal && backdrop) {
+        modal.style.display = 'none';
+        backdrop.style.display = 'none';
+      }
+    }
+
+    function submitAddProduct(e) {
+      e.preventDefault();
+      const productData = {
+        name: document.getElementById('newProdName').value,
+        category: document.getElementById('newProdCategory').value,
+        price: document.getElementById('newProdPrice').value,
+        sku: document.getElementById('newProdSku').value,
+        badge: document.getElementById('newProdBadge').value,
+        image: document.getElementById('newProdImage').value,
+        description: document.getElementById('newProdDesc').value
+      };
+
+      authManager.addProduct(productData);
+      closeAddProductModal();
+      renderAccountPage();
+    }
+
+    function adminDeleteProduct(prodId, prodName) {
+      if (confirm(`Are you sure you want to remove "${prodName}" from the store catalog?`)) {
+        authManager.deleteProduct(prodId);
+        renderAccountPage();
+      }
+    }
+
+    function filterAdminProducts(query) {
+      const q = query.toLowerCase().trim();
+      const tbody = document.getElementById('adminProductsTbody');
+      if (!tbody) return;
+
+      const products = authManager.getProducts();
+      const filtered = q ? products.filter(p => (p.name && p.name.toLowerCase().includes(q)) || (p.sku && p.sku.toLowerCase().includes(q)) || (p.category && p.category.toLowerCase().includes(q))) : products;
+
+      tbody.innerHTML = filtered.slice(0, 30).map(p => `
+        <tr id="prod-row-${p.id}">
+          <td>
+            <img src="${p.image}" alt="${p.name}" style="width: 44px; height: 44px; object-fit: contain; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0;">
+          </td>
+          <td>
+            <strong>${p.name}</strong>
+            <div style="font-size: 11.5px; color: #059669; text-transform: uppercase; font-weight: 600;">${(p.category || '').replace(/-/g, ' ')}</div>
+          </td>
+          <td><code>${p.sku || p.id}</code></td>
+          <td><strong>£${Number(p.price || p.basePrice || 0).toFixed(2)}</strong></td>
+          <td><span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: #f1f5f9; color: #334155;">${p.badge || 'STANDARD'}</span></td>
+          <td><span style="color: #059669; font-weight: 700;">In Stock</span></td>
+          <td style="text-align: right;">
+            <button type="button" class="dash-action-btn" onclick="adminDeleteProduct('${p.id}', '${p.name.replace(/'/g, "\\'")}')" style="background: #fef2f2; color: #dc2626; border-color: #fecaca;" title="Remove this product from store catalog">
+              <i class="fas fa-trash-alt"></i> Remove
+            </button>
+          </td>
+        </tr>
+      `).join('');
     }
 
     document.addEventListener('DOMContentLoaded', () => {
