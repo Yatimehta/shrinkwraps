@@ -73,13 +73,6 @@
         </form>
       </div>
 
-      <!-- Trade Phone Hotline -->
-      <a href="tel:02081234567" class="header-trade-phone">
-        <i class="fas fa-phone-volume"></i>
-        <div class="header-phone-text">
-        </div>
-      </a>
-
       <!-- Cart Widget -->
       <div class="header-cart-widget" id="openCartDrawerBtn">
         <span class="cart-icon-wrap">
@@ -625,7 +618,6 @@
           <a href="index.html" class="footer-logo">
             <img src="images/sw-logo.webp" alt="shrinkwraps.co.uk" style="max-width: 210px; display: block; margin-bottom: 16px;">
           </a>
-          
           <div class="footer-social" style="margin-top: 14px;">
             <a href="http://fb.com/shrinkwrapsuk" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/shrinkwrapsuk" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -686,7 +678,6 @@
       </div>
 
       <div class="bottom-footer" style="padding: 20px 0; border-top: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
-        <p style="font-size: 12px; color: #64748b; margin: 0;">&copy; 2026 shrinkwraps.co.uk - Operated by RAJDHANI UK LIMITED. All Rights Reserved.</p>
         <div class="payment-badges" style="display: flex; gap: 12px; font-size: 1.5rem; color: #64748b;">
           <span><i class="fab fa-cc-visa"></i></span>
           <span><i class="fab fa-cc-mastercard"></i></span>
@@ -718,9 +709,6 @@
   </div>
 
   <!-- Floating WhatsApp -->
-  <a href="https://wa.me/4402081234567" target="_blank" class="floating-whatsapp" title="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
 
   <!-- Scroll to Top -->
   <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">

@@ -108,7 +108,7 @@ const PRODUCTS_DATA = [
       "Material": "100% Virgin LLDPE Cast Stretch Film",
       "Puncture Resistance": "Extreme Multi-Layer Tear Guard",
       "Cling Surface": "Internal Quiet Cling / Non-Tacky External",
-      "Manufacturer": "shrinkwraps.co.uk (RAJDHANI UK LIMITED)",
+      "Manufacturer": "shrinkwraps.co.uk ",
       "Dispatch Time": "Same Day Dispatch Before 2PM"
     },
     "bulkDiscounts": [

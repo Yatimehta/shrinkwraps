@@ -73,13 +73,6 @@
         </form>
       </div>
 
-      <!-- Trade Phone Hotline -->
-      <a href="tel:02081234567" class="header-trade-phone">
-        <i class="fas fa-phone-volume"></i>
-        <div class="header-phone-text">
-        </div>
-      </a>
-
       <!-- Cart Widget -->
       <div class="header-cart-widget" id="openCartDrawerBtn">
         <span class="cart-icon-wrap">
@@ -490,6 +483,9 @@
           <a href="contact-us.html" class="btn-hero-primary" style="text-align:center; justify-content:center;">
             <i class="fas fa-file-invoice"></i> Request Trade Quote
           </a>
+          <a href="tel:02081234567" class="btn-hero-secondary" style="text-align:center; justify-content:center;">
+            <i class="fas fa-phone"></i> Call 020 8123 4567
+          </a>
         </div>
       </div>
     </div>
@@ -625,7 +621,6 @@
           <a href="index.html" class="footer-logo">
             <img src="images/sw-logo.webp" alt="shrinkwraps.co.uk" style="max-width: 210px; display: block; margin-bottom: 16px;">
           </a>
-          
           <div class="footer-social" style="margin-top: 14px;">
             <a href="http://fb.com/shrinkwrapsuk" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/shrinkwrapsuk" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>

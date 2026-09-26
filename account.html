@@ -223,8 +223,6 @@
       <a href="tel:02081234567" class="header-trade-phone">
         <i class="fas fa-phone-volume"></i>
         <div class="header-phone-text">
-          <span class="header-phone-label">Trade Enquiries</span>
-          <span class="header-phone-num">+44 020 8123 4567</span>
         </div>
       </a>
 
@@ -308,8 +306,8 @@
           </div>
           <p class="footer-desc">The UK's premier direct trade manufacturer &amp; wholesale packaging supplier. Direct factory pricing, pallet volume discounts, and nationwide express shipping.</p>
           <div class="footer-contact-info">
-            <p><i class="fas fa-map-marker-alt"></i> Unit 2B, Trade City, London, UK</p>
-            <p><i class="fas fa-phone"></i> +44 020 8123 4567</p>
+            
+            
             <p><i class="fas fa-envelope"></i> sales@shrinkwraps.co.uk</p>
           </div>
         </div>
@@ -993,7 +991,7 @@
                   ${user.company ? `<div><strong>Company:</strong> ${user.company}</div>` : ''}
                   <div><strong>Contact:</strong> ${user.name}</div>
                   <div><strong>Email:</strong> ${user.email}</div>
-                  <div><strong>Phone:</strong> ${user.phone || '+44 020 8123 4567'}</div>
+                  <div><strong>Phone:</strong> ${user.phone || ''}</div>
                   ${user.vatNumber ? `<div><strong>VAT Reg:</strong> <code>${user.vatNumber}</code></div>` : ''}
                 </div>
               </div>
@@ -1005,7 +1003,7 @@
                 </div>
                 <div style="font-size: 13px; line-height: 1.6; color: #475569; background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid #f1f5f9;">
                   <strong>${user.company || user.name}</strong><br>
-                  ${user.address?.line1 || 'Unit 4, Trade City Hub'}<br>
+                  ${user.address?.line1 || ''}<br>
                   ${user.address?.city || 'London'}, ${user.address?.postcode || 'TW6 2AB'}<br>
                   ${user.address?.country || 'United Kingdom'}
                 </div>
@@ -1019,9 +1017,7 @@
                 <p style="font-size: 12px; color: #cbd5e1; margin: 0 0 14px; line-height: 1.4;">
                   Need bespoke pallet quotations, custom printed stretch film, or bulk truckload dispatch?
                 </p>
-                <a href="tel:02081234567" style="display: inline-flex; align-items: center; gap: 8px; background: #10b981; color: #ffffff; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 12.5px;">
-                  <i class="fas fa-phone-volume"></i> +44 020 8123 4567
-                </a>
+                
               </div>
             </div>
           </div>
